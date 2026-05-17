@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    image: sunnyside-web
+    container_name: sunnyside-web
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
