@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D. Evergreen | Sunnyside</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #0F5C3F;
+            --green-deep: #0A4630;
+            --mint: #CFF3DD;
+            --white: #FFFFFF;
+            --yolk: #FFD426;
+            --rule: rgba(255, 255, 255, .28);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--green);
+            color: var(--mint);
+            font: 400 clamp(1.2rem, 1rem + .95vw, 1.75rem)/1.32 'Newsreader', serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--white); font-weight: 700; text-underline-offset: .14em; text-decoration-thickness: .07em; }
+        a:hover { text-decoration-thickness: .12em; }
+        :focus-visible { outline: 3px solid var(--yolk); outline-offset: 4px; border-radius: 4px; }
+
+        .wrap { max-width: 910px; margin: 0 auto; padding: 0 20px; }
+
+        .mark { display: grid; justify-items: center; gap: 14px; padding: clamp(48px, 9vw, 96px) 0 clamp(40px, 7vw, 80px); text-decoration: none; font-size: .8em; }
+        .mark i { width: 64px; height: 64px; border-radius: 47% 53% 50% 50% / 52% 48% 52% 48%; background: var(--white); display: grid; place-items: center; }
+        .mark i::after { content: ""; width: 26px; height: 26px; border-radius: 50%; background: var(--yolk); }
+
+        .pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 4vw, 44px); }
+        .card { border: 1px solid var(--rule); border-radius: 10px; padding: clamp(22px, 4vw, 44px); }
+        .card h2 { margin: 0 0 .15em; font-size: 1.75em; line-height: 1.05; letter-spacing: -0.015em; }
+        .card p { margin: 0; color: var(--white); }
+
+        .portrait { margin: clamp(16px, 4vw, 44px) 0 0; position: relative; border-radius: 10px; overflow: hidden; background: var(--green-deep); }
+        .portrait img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 30%; mix-blend-mode: luminosity; opacity: .9; }
+        .portrait figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 3em clamp(18px, 3vw, 32px) clamp(14px, 2.4vw, 26px); color: var(--white); background: linear-gradient(transparent, rgba(6, 40, 27, .85)); font-size: .8em; }
+
+        .prose { max-width: 30em; margin: 0 auto; padding-top: clamp(56px, 9vw, 104px); }
+        .prose h1 { margin: 0 0 .5em; color: var(--white); font-size: clamp(2.2rem, 1.3rem + 4vw, 3.9rem); line-height: 1; letter-spacing: -0.025em; }
+        .prose h2 { margin: 2.4em 0 .4em; color: var(--white); font-size: 1em; }
+        .prose p { margin: 0 0 1em; }
+        .prose strong { color: var(--white); }
+
+        .rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+        .rows li { padding: .55em 0; border-bottom: 1px solid var(--rule); }
+        ol.rows { counter-reset: step; }
+        ol.rows li { counter-increment: step; display: grid; grid-template-columns: 1.6em 1fr; }
+        ol.rows li::before { content: counter(step) "."; color: var(--white); font-weight: 700; }
+
+        form { display: grid; gap: 14px; margin-top: 1.2em; }
+        input, textarea { width: 100%; font: inherit; color: var(--white); background: var(--green-deep); border: 1px solid var(--rule); border-radius: 10px; padding: .55em .7em; }
+        textarea { min-height: 5.5em; resize: vertical; }
+        ::placeholder { color: rgba(207, 243, 221, .6); }
+        button { justify-self: start; font: inherit; font-weight: 700; color: var(--green-deep); background: var(--white); border: 0; border-radius: 999px; padding: .45em 1.2em .5em; cursor: pointer; }
+        button:hover { background: var(--yolk); }
+
+        footer { text-align: center; padding: clamp(64px, 10vw, 120px) 20px 24px; font-size: .7em; }
+
+        @media (max-width: 640px) {
+            .pair { grid-template-columns: 1fr; }
+            .portrait img { aspect-ratio: 4 / 3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap" id="top">
+        <a class="mark" href="#top" aria-label="Sunnyside"><i></i>Sunnyside</a>
+
+        <div class="pair" id="services">
+            <div class="card">
+                <h2><a href="#contact">New apps</a></h2>
+                <p>From an idea to a shipped product in the App Store, designed and built by me.</p>
+            </div>
+            <div class="card">
+                <h2><a href="#contact">Existing apps</a></h2>
+                <p>Fixes, features, and rewrites for an app you already have, plus upkeep after.</p>
+            </div>
+        </div>
+
+        <figure class="portrait">
+            <img src="face.svg" alt="Grant Bellar">
+            <figcaption>Grant Bellar, founder. Wichita, Kansas.</figcaption>
+        </figure>
+
+        <main class="prose">
+            <h1>I build mobile apps, and I&rsquo;m the only person you&rsquo;ll deal with.</h1>
+            <p>Sunnyside is my app studio. You talk to me, I design it, I build it, and I put it in the App Store. <strong>Nobody gets handed off.</strong></p>
+            <p>That keeps things fast, and it means the person you explain your business to is the person writing the code.</p>
+
+            <h2 id="work">Recent work</h2>
+            <ul class="rows">
+                <li><a href="#work">Project one.</a> A short line about what it does.</li>
+                <li><a href="#work">Project two.</a> A short line about what it does.</li>
+                <li><a href="#work">Project three.</a> A short line about what it does.</li>
+            </ul>
+
+            <h2 id="process">How it goes</h2>
+            <ol class="rows">
+                <li><span><strong>Talk.</strong> You tell me what you need.</span></li>
+                <li><span><strong>Scope.</strong> I send a plan and a price.</span></li>
+                <li><span><strong>Build.</strong> You see progress every week.</span></li>
+                <li><span><strong>Launch.</strong> It goes live and I stick around.</span></li>
+            </ol>
+
+            <h2 id="contact">Tell me about your app</h2>
+            <p>I answer every message myself, usually within a day.</p>
+            <form>
+                <input type="email" name="email" placeholder="Your email" aria-label="Your email" required>
+                <textarea name="message" placeholder="What are you building?" aria-label="What are you building?" required></textarea>
+                <button type="submit">Send message</button>
+            </form>
+        </main>
+    </div>
+
+    <footer>&copy; 2026 Sunnyside. Made in Wichita, Kansas.</footer>
+
+    <script src="switcher.js"></script>
+</body>
+</html>
