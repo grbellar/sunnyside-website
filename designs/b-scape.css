@@ -1,0 +1,35 @@
+/* Landscape variations: a layered dune scene behind the letter, with day and night palettes set per page. */
+
+body { transition: background-color .4s, color .4s; }
+
+.top-actions { display: flex; align-items: center; gap: 1.2em; }
+.theme-toggle { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 0; padding: .3em 0; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
+
+.button, .button:hover { background: var(--btn-bg); color: var(--btn-ink); }
+.button:hover { filter: brightness(1.1); }
+
+.stage { position: relative; background: linear-gradient(var(--sky-a), var(--sky-b)); transition: background .4s; }
+.hero { position: relative; z-index: 1; }
+.head, .side { position: relative; z-index: 1; }
+
+.yolk { display: block; background: var(--disc); transition: background-color .4s; }
+
+.ground {
+    position: relative;
+    margin: clamp(48px, 8vw, 96px) -56px 0;
+    padding: clamp(48px, 10vw, 150px) 56px 0;
+}
+.scape { position: absolute; left: 0; bottom: 0; width: 100%; height: calc(100% + var(--scape-rise)); }
+.scape path { transition: fill .4s; }
+.scene-night { display: none; }
+:root[data-theme="dark"] .scene-day { display: none; }
+:root[data-theme="dark"] .scene-night { display: inline; }
+.ground .sheets { margin-top: 0; }
+
+.letter, .snapshot { color: #1F1700; }
+.signoff small { color: rgba(31, 23, 0, .7); }
+
+.steps li { border-top-color: var(--line); }
+.contact input, .contact textarea { background: var(--surface); border-color: var(--line); }
+
+@media (prefers-reduced-motion: reduce) { body, .stage, .yolk, .scape path { transition: none; } }

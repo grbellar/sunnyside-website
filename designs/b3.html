@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B3. Loud | Sunnyside</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="b-base.css">
+    <style>
+        :root {
+            --page: #FFD426;
+            --head-font: 'Archivo', sans-serif;
+            --body-font: 'Archivo', sans-serif;
+            --letter-font: 'Newsreader', serif;
+            --hand-font: 'Archivo', sans-serif;
+            --sign-font: 'Homemade Apple', cursive;
+            --head-size: clamp(2.7rem, 1rem + 7.6vw, 7.4rem);
+            --head-weight: 900;
+            --head-leading: .9;
+            --head-track: -0.035em;
+            --inset: 0px;
+            --tilt: -2deg;
+            --sheet-a: -1.6deg;
+            --sheet-b: 1.2deg;
+            --btn-radius: 0px;
+            --rule: 6px;
+            --photo-shadow: 12px 12px 0 var(--ink);
+            --paper-shadow: 0 0 0 4px var(--ink);
+        }
+
+        .top { border-bottom: 4px solid var(--ink); }
+        .mark { font-stretch: 75%; font-weight: 900; font-size: 1.5em; }
+        .button { font-weight: 800; padding: .7em 1.3em; }
+
+        .hero { grid-template-areas: "head head" "photo side"; row-gap: clamp(28px, 4vw, 56px); }
+        .head h1 { font-stretch: 72%; text-wrap: balance; }
+        .head .sub { font-size: 1.35em; font-weight: 600; }
+        .side { align-self: center; font-size: 1.15em; }
+        .links a { font-weight: 800; text-decoration-thickness: .12em; }
+        .links span { color: var(--ink); }
+
+        .snapshot { border: 4px solid var(--ink); }
+        .snapshot figcaption { font-weight: 800; font-size: .85em; padding-top: 10px; }
+
+        .sheets { max-width: 780px; }
+        .sheets::before, .sheets::after { box-shadow: 0 0 0 4px var(--ink); }
+        .letter { font-size: 1.2em; font-weight: 500; }
+
+        .band { background: var(--ink); color: var(--panel); padding-bottom: clamp(56px, 9vw, 112px); }
+        .band .work article { border-top-color: var(--panel); }
+        .band .work p { color: rgba(255, 212, 38, .78); }
+        .band .shot { background: var(--panel); }
+        .block h2 { font-stretch: 72%; font-size: clamp(2.2rem, 1.2rem + 4vw, 4.4rem); line-height: .95; }
+        .steps { max-width: 44rem; font-size: 1.25em; }
+        .steps li { border-top: 4px solid var(--ink); }
+        .steps li::before { font-weight: 900; }
+        .contact input, .contact textarea { border-width: 4px; }
+
+        @media (max-width: 760px) { .hero { grid-template-areas: "head" "photo" "side"; } }
+    </style>
+</head>
+<body>
+    <header class="top">
+        <a class="mark" href="#top">Sunnyside</a>
+        <a class="button" href="#contact">Start a project</a>
+    </header>
+
+    <div class="stage" id="top">
+        <div class="hero">
+            <div class="head">
+                <h1>Mobile apps, designed and built by one person you can call.</h1>
+                <p class="sub">Sunnyside is Grant Bellar&rsquo;s app studio in Wichita, Kansas.</p>
+            </div>
+            <div class="photo">
+                <div class="yolk"></div>
+                <figure class="snapshot">
+                    <img src="face.svg" alt="Grant Bellar">
+                    <figcaption>Grant, Wichita KS</figcaption>
+                </figure>
+                <span class="note"><svg viewBox="0 0 46 30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M44 5C32 2 14 6 4 22"/><path d="M3 12l1 10 10-3"/></svg>that&rsquo;s me</span>
+            </div>
+            <div class="side">
+                <ul class="links">
+                    <li><a href="#work">Recent work</a> <span>&mdash; apps I&rsquo;ve shipped</span></li>
+                    <li><a href="#services">New apps</a> <span>&mdash; from idea to App Store</span></li>
+                    <li><a href="#services">Existing apps</a> <span>&mdash; fixes, features, rewrites</span></li>
+                    <li><a href="#process">How it goes</a> <span>&mdash; four steps, no surprises</span></li>
+                    <li><a href="#letter">A note from me</a> <span>&mdash; why I work this way</span></li>
+                </ul>
+                <a class="button" href="#contact">Tell me about your app</a>
+            </div>
+        </div>
+
+        <div class="sheets" id="letter">
+            <div class="letter">
+                <p>Hi,</p>
+                <p>I&rsquo;m Grant. I run Sunnyside, and I&rsquo;m the person who will design, build, and ship your app.</p>
+                <p>Most studios sell you a team and then hand your project to whoever is free. <mark>Here you get me, from the first call to the App Store.</mark> That keeps things fast, and it means the person you explain your business to is the person writing the code.</p>
+                <p id="services">I take on new apps that start from an idea, and existing apps that need fixes, features, or a rewrite. After launch I keep them updated.</p>
+                <p>If that sounds like what you need, send me a note. I read and answer every one.</p>
+                <div class="signoff">
+                    <img src="face.svg" alt="">
+                    <div>
+                        <div class="signature">Grant Bellar</div>
+                        <small>Founder, Sunnyside</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="band">
+        <section class="block" id="work">
+            <h2>Recent work</h2>
+            <div class="work">
+                <article><div class="shot"><i></i></div><h3>Project one</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+                <article><div class="shot"><i></i></div><h3>Project two</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+                <article><div class="shot"><i></i></div><h3>Project three</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+            </div>
+        </section>
+    </div>
+
+    <section class="block" id="process">
+        <h2>How it goes</h2>
+        <ol class="steps">
+            <li><span><strong>Talk.</strong> You tell me what you need.</span></li>
+            <li><span><strong>Scope.</strong> I send a plan and a price.</span></li>
+            <li><span><strong>Build.</strong> You see progress every week.</span></li>
+            <li><span><strong>Launch.</strong> It goes live and I stick around.</span></li>
+        </ol>
+    </section>
+
+    <section class="block contact" id="contact">
+        <h2>Tell me about your app</h2>
+        <p>I answer every message myself, usually within a day.</p>
+        <form>
+            <label>Your email <input type="email" name="email" required></label>
+            <label>What are you building? <textarea name="message" required></textarea></label>
+            <button class="button" type="submit">Send message</button>
+        </form>
+    </section>
+
+    <footer>&copy; 2026 Sunnyside. Made in Wichita, Kansas.</footer>
+
+    <script src="switcher.js"></script>
+</body>
+</html>

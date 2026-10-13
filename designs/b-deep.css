@@ -1,0 +1,160 @@
+/* Round four: depth for the dune pages. Ridges fade with distance, the sun sets behind them, and paper casts real shadows.
+   Loads after b-base.css and b-scape.css. Each page sets the palette and type. */
+
+:root {
+    --grain-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.4 0 0 0 -.45'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --grain-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1.4 0 0 0 -.45'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --grain: var(--grain-dark);
+    --grain-strength: .09;
+    --scape-rise: 0px;
+    --paper-grain: .12;
+    --stars: 0;
+    --rim: rgba(255, 255, 255, .45);
+
+    --sun-size: clamp(170px, 27vw, 390px);
+    --sun-x: 67%;
+    --sun-top: -30px;
+    --sun-halo: 0 0 90px 30px rgba(255, 212, 38, .35);
+    --moon: #F3F1E7;
+    --moon-size: clamp(64px, 8vw, 112px);
+    --moon-x: 80%;
+    --moon-top: -46px;
+    --moon-halo: 0 0 70px 14px rgba(243, 241, 231, .22);
+
+    --band-ink: #FFFFFF;
+    --band-soft: rgba(255, 255, 255, .7);
+    --band-accent: #FFD426;
+    --phone: #101010;
+}
+
+:root[data-theme="dark"] {
+    --grain: var(--grain-light);
+    --grain-strength: .12;
+    --stars: .9;
+}
+
+/* Sky: stars under everything, grain over the scene, content above both. */
+.stage { isolation: isolate; }
+.stage::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+        radial-gradient(2.4px 2.4px at 6% 14%, #fff 50%, transparent 52%),
+        radial-gradient(1.8px 1.8px at 14% 58%, #fff 50%, transparent 52%),
+        radial-gradient(2.7px 2.7px at 23% 31%, #fff 50%, transparent 52%),
+        radial-gradient(1.7px 1.7px at 31% 76%, #fff 50%, transparent 52%),
+        radial-gradient(2.1px 2.1px at 39% 9%, #fff 50%, transparent 52%),
+        radial-gradient(1.8px 1.8px at 47% 47%, #fff 50%, transparent 52%),
+        radial-gradient(3.0px 3.0px at 55% 22%, #fff 50%, transparent 52%),
+        radial-gradient(1.7px 1.7px at 61% 69%, #fff 50%, transparent 52%),
+        radial-gradient(2.2px 2.2px at 69% 38%, #fff 50%, transparent 52%),
+        radial-gradient(1.8px 1.8px at 76% 12%, #fff 50%, transparent 52%),
+        radial-gradient(2.5px 2.5px at 84% 55%, #fff 50%, transparent 52%),
+        radial-gradient(1.7px 1.7px at 91% 27%, #fff 50%, transparent 52%),
+        radial-gradient(2.1px 2.1px at 96% 81%, #fff 50%, transparent 52%);
+    background-size: 710px 470px, 530px 610px, 890px 390px;
+    opacity: var(--stars);
+    transition: opacity 1.2s;
+    pointer-events: none;
+}
+.stage::after {
+    content: "";
+    position: absolute; inset: 0; z-index: 1;
+    background-image: var(--grain);
+    opacity: var(--grain-strength);
+    pointer-events: none;
+}
+.hero { z-index: 2; }
+
+.ground { padding-top: clamp(150px, 26vw, 370px); }
+.ground .sheets { z-index: 2; }
+
+/* The sun and moon sit under the ridges, so setting means sinking behind them. */
+.orb {
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    translate: -50% var(--py, 0px);
+    transition: transform 1.4s cubic-bezier(.6, 0, .3, 1), background-color .4s;
+}
+.sun { left: var(--sun-x); top: var(--sun-top); width: var(--sun-size); background: var(--disc); box-shadow: var(--sun-halo); }
+.moon {
+    left: var(--moon-x); top: var(--moon-top); width: var(--moon-size);
+    background: var(--moon);
+    box-shadow: inset -.16em .08em 0 rgba(0, 0, 0, .1), var(--moon-halo);
+    font-size: var(--moon-size);
+    transform: translateY(260%);
+}
+:root[data-theme="dark"] .sun { transform: translateY(150%); }
+:root[data-theme="dark"] .moon { transform: none; }
+
+.scape .ridge { translate: 0 var(--py, 0px); stroke: var(--rim); stroke-width: 1; }
+.scape path { vector-effect: non-scaling-stroke; }
+.scape stop { transition: stop-color .4s; }
+.scape use { transition: fill .4s, stroke .4s; }
+
+/* Print and paper. */
+.snapshot {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .16), 0 12px 16px -10px rgba(0, 0, 0, .32), 0 44px 60px -34px rgba(0, 0, 0, .5);
+}
+.snapshot img { outline: 1px solid rgba(0, 0, 0, .1); outline-offset: -1px; }
+
+.sheets::before, .sheets::after {
+    background: color-mix(in srgb, var(--paper) 93%, #000);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .28), 0 22px 30px -18px rgba(0, 0, 0, .55);
+}
+.letter {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .22), 0 26px 40px -22px rgba(0, 0, 0, .6), 0 80px 100px -60px rgba(0, 0, 0, .7);
+}
+.letter::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: var(--grain-dark);
+    opacity: var(--paper-grain);
+    pointer-events: none;
+}
+
+/* Work: the dark band is the foot of the nearest ridge. Phones rise out of each tile. */
+.band { background: var(--band); color: var(--band-ink); padding-bottom: clamp(56px, 9vw, 112px); transition: background-color .4s; }
+.band h2 { color: var(--band-accent); }
+.band .work article { border-top-color: var(--band-accent); }
+.band .work p { color: var(--band-soft); }
+.shot {
+    overflow: hidden;
+    place-items: end center;
+    background: radial-gradient(120% 100% at 28% 0%, color-mix(in srgb, var(--shot) 78%, #fff), var(--shot) 62%);
+}
+.shot i {
+    position: relative;
+    width: 42%;
+    aspect-ratio: 9 / 15;
+    translate: 0 24%;
+    border: 5px solid var(--phone);
+    border-radius: clamp(18px, 2.4vw, 30px);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .25), -18px 22px 34px -18px rgba(0, 0, 0, .5), 0 40px 50px -24px rgba(0, 0, 0, .45);
+}
+.shot i::before {
+    content: "";
+    position: absolute; top: 7px; left: 50%;
+    width: 30%; height: 8px; border-radius: 8px;
+    background: var(--phone);
+    translate: -50%;
+}
+.work article:nth-child(2) .shot i { translate: 0 12%; }
+
+/* Heading in the left column, content in the right. */
+@media (min-width: 900px) {
+    .split { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); column-gap: clamp(28px, 5vw, 72px); align-items: start; }
+    .split > h2 { grid-row: 1 / span 3; margin: 0; }
+    .split > :not(h2) { grid-column: 2; }
+    .split.contact > p { margin-top: 0; }
+}
+
+@media (max-width: 760px) {
+    .shot { aspect-ratio: 16 / 10; }
+    .shot i { width: 34%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .orb, .stage::before, .scape stop, .scape use, .band { transition: none; }
+}

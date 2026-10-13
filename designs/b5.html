@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B5. Sunrise | Sunnyside</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&family=Lora:wght@400;600&family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="b-base.css">
+    <link rel="stylesheet" href="b-scape.css">
+    <style>
+        :root {
+            --page: #F7F6F2;
+            --ink: #1F1700;
+            --ink-soft: rgba(31, 23, 0, .72);
+            --line: rgba(31, 23, 0, .16);
+            --paper: #FFFFFF;
+            --surface: #FFFFFF;
+            --shot: #FFF1B0;
+            --btn-bg: #1F1700;
+            --btn-ink: #FFD426;
+            --sky-a: #FFF8DC;
+            --sky-b: #FFDF5E;
+            --disc: #FFFDF2;
+            --disc-halo: rgba(255, 255, 255, .45);
+            --l1: #FFD43D; --l2: #FBC22B; --l3: #F3AD1C; --l4: #E69610; --l5: #D17D08; --l6: #B46504;
+            --glow: rgba(255, 255, 255, .8);
+
+            --head-font: 'Plus Jakarta Sans', sans-serif;
+            --body-font: 'Plus Jakarta Sans', sans-serif;
+            --letter-font: 'Lora', serif;
+            --hand-font: 'Homemade Apple', cursive;
+            --sign-font: 'Homemade Apple', cursive;
+            --head-track: -0.04em;
+            --inset: clamp(8px, 2.2vw, 28px);
+            --panel-radius: clamp(20px, 3vw, 36px);
+            --radius: 18px;
+            --btn-radius: 999px;
+            --tilt: -1.5deg;
+            --sheet-a: -1deg;
+            --sheet-b: .8deg;
+            --photo-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 30px 60px -24px rgba(0, 0, 0, .55);
+            --paper-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 24px 48px -28px rgba(0, 0, 0, .5);
+            --card-shadow: 0 1px 2px rgba(31, 23, 0, .06), 0 16px 32px -20px rgba(31, 23, 0, .3);
+            --scape-rise: clamp(80px, 20vw, 280px);
+        }
+
+        :root[data-theme="dark"] {
+            --page: #0D0B07;
+            --ink: #F5EFDD;
+            --ink-soft: rgba(245, 239, 221, .7);
+            --line: rgba(245, 239, 221, .16);
+            --paper: #F4EFE0;
+            --surface: #19150D;
+            --shot: #2A2416;
+            --btn-bg: #FFD426;
+            --btn-ink: #1F1700;
+            --sky-a: #241F14;
+            --sky-b: #453B28;
+            --disc: #5A5038;
+            --disc-halo: rgba(233, 226, 204, .06);
+            --l1: #3A3120; --l2: #30291A; --l3: #272115; --l4: #1E190F; --l5: #15110A; --l6: #0D0B07;
+            --glow: rgba(255, 190, 70, .55);
+            --card-shadow: 0 0 0 1px rgba(245, 239, 221, .08);
+        }
+
+        body { font-size: clamp(1rem, .92rem + .4vw, 1.2rem); }
+        .button { box-shadow: 0 8px 20px -8px rgba(0, 0, 0, .6); padding: .7em 1.4em; }
+
+        .yolk { box-shadow: 0 0 0 28px var(--disc-halo), 0 0 120px 40px var(--disc-halo); }
+        .snapshot { padding: 10px 10px 8px; }
+        .snapshot img { border-radius: 10px; }
+        .snapshot figcaption { font-size: .68em; }
+
+        .links li { display: flex; flex-wrap: wrap; gap: 0 .4em; padding: .28em 0; border-bottom: 1px solid var(--line); line-height: 1.5; }
+        .links li:first-child { border-top: 1px solid var(--line); }
+        .links a { text-decoration: none; }
+        .links a:hover { text-decoration: underline; }
+
+        .letter mark { border-radius: 4px; }
+
+        .work article { border-top: 0; background: var(--surface); border-radius: 20px; padding: 14px 14px 20px; box-shadow: var(--card-shadow); }
+        .shot { border-radius: 12px; }
+        .shot i { border: 0; border-radius: 14px; background: #fff; box-shadow: 0 14px 28px -12px rgba(0, 0, 0, .5); }
+        .work h3, .work p { padding: 0 6px; }
+
+        .steps { background: var(--surface); border-radius: 20px; padding: 6px 24px; box-shadow: var(--card-shadow); }
+        .steps li { grid-template-columns: 2.4em 1fr; }
+        .steps li:first-child { border-top: 0; }
+        .steps li::before { display: grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: #FFD426; color: #1F1700; font-size: .85em; }
+
+        .contact input, .contact textarea { border: 0; border-radius: 14px; box-shadow: 0 0 0 1px var(--line); }
+    </style>
+    <script src="theme.js"></script>
+</head>
+<body>
+    <header class="top">
+        <a class="mark" href="#top">Sunnyside</a>
+        <div class="top-actions">
+            <button class="theme-toggle" type="button" id="theme-toggle">feeling sleepy?</button>
+            <a class="button" href="#contact">Start a project</a>
+        </div>
+    </header>
+
+    <div class="stage" id="top">
+        <div class="hero">
+            <div class="head">
+                <h1>Mobile apps, designed and built by one person you can call.</h1>
+                <p class="sub">Sunnyside is Grant Bellar&rsquo;s app studio in Wichita, Kansas.</p>
+            </div>
+            <div class="photo">
+                <div class="yolk"></div>
+                <figure class="snapshot">
+                    <img src="face.svg" alt="Grant Bellar">
+                    <figcaption>Grant, Wichita KS</figcaption>
+                </figure>
+            </div>
+            <div class="side">
+                <ul class="links">
+                    <li><a href="#work">Recent work</a> <span>&mdash; apps I&rsquo;ve shipped</span></li>
+                    <li><a href="#services">New apps</a> <span>&mdash; from idea to App Store</span></li>
+                    <li><a href="#services">Existing apps</a> <span>&mdash; fixes, features, rewrites</span></li>
+                    <li><a href="#process">How it goes</a> <span>&mdash; four steps, no surprises</span></li>
+                    <li><a href="#letter">A note from me</a> <span>&mdash; why I work this way</span></li>
+                </ul>
+                <a class="button" href="#contact">Tell me about your app</a>
+            </div>
+        </div>
+
+        <div class="ground">
+            <svg class="scape" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                    <radialGradient id="glow">
+                        <stop offset="0" style="stop-color: var(--glow)"/>
+                        <stop offset="1" style="stop-color: var(--glow); stop-opacity: 0"/>
+                    </radialGradient>
+                </defs>
+                <path style="fill: var(--l1)" d="M0 150C200 90 380 60 560 120S900 230 1100 140s240-110 340-60V800H0Z"/>
+                <path style="fill: var(--l2)" d="M0 240C180 210 330 280 520 270s300-110 490-40 290 80 430-10V800H0Z"/>
+                <path style="fill: var(--l3)" d="M0 360C220 310 420 400 640 380s340-100 540-30 200 30 260-10V800H0Z"/>
+                <ellipse cx="880" cy="430" rx="460" ry="250" fill="url(#glow)"/>
+                <path style="fill: var(--l4)" d="M0 440C150 430 300 520 470 560S760 520 900 470s360-10 540-70V800H0Z"/>
+                <path style="fill: var(--l5)" d="M0 560C240 520 500 640 780 620s420-110 660-40V800H0Z"/>
+                <path style="fill: var(--l6)" d="M0 690C300 640 600 740 900 700s360-50 540 10V800H0Z"/>
+            </svg>
+            <div class="sheets" id="letter">
+                <div class="letter">
+                    <p>Hi,</p>
+                    <p>I&rsquo;m Grant. I run Sunnyside, and I&rsquo;m the person who will design, build, and ship your app.</p>
+                    <p>Most studios sell you a team and then hand your project to whoever is free. <mark>Here you get me, from the first call to the App Store.</mark> That keeps things fast, and it means the person you explain your business to is the person writing the code.</p>
+                    <p id="services">I take on new apps that start from an idea, and existing apps that need fixes, features, or a rewrite. After launch I keep them updated.</p>
+                    <p>If that sounds like what you need, send me a note. I read and answer every one.</p>
+                    <div class="signoff">
+                        <img src="face.svg" alt="">
+                        <div>
+                            <div class="signature">Grant Bellar</div>
+                            <small>Founder, Sunnyside</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="band">
+        <section class="block" id="work">
+            <h2>Recent work</h2>
+            <div class="work">
+                <article><div class="shot"><i></i></div><h3>Project one</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+                <article><div class="shot"><i></i></div><h3>Project two</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+                <article><div class="shot"><i></i></div><h3>Project three</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+            </div>
+        </section>
+    </div>
+
+    <section class="block" id="process">
+        <h2>How it goes</h2>
+        <ol class="steps">
+            <li><span><strong>Talk.</strong> You tell me what you need.</span></li>
+            <li><span><strong>Scope.</strong> I send a plan and a price.</span></li>
+            <li><span><strong>Build.</strong> You see progress every week.</span></li>
+            <li><span><strong>Launch.</strong> It goes live and I stick around.</span></li>
+        </ol>
+    </section>
+
+    <section class="block contact" id="contact">
+        <h2>Tell me about your app</h2>
+        <p>I answer every message myself, usually within a day.</p>
+        <form>
+            <label>Your email <input type="email" name="email" required></label>
+            <label>What are you building? <textarea name="message" required></textarea></label>
+            <button class="button" type="submit">Send message</button>
+        </form>
+    </section>
+
+    <footer>&copy; 2026 Sunnyside. Made in Wichita, Kansas.</footer>
+
+    <script src="switcher.js"></script>
+</body>
+</html>

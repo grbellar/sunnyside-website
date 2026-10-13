@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B9. Dune, still | Sunnyside</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300..800&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="b-base.css">
+    <link rel="stylesheet" href="b-scape.css">
+    <link rel="stylesheet" href="b-deep.css">
+    <style>
+        :root {
+            --page: #FFFFFF;
+            --ink: #111111;
+            --ink-soft: rgba(17, 17, 17, .62);
+            --line: rgba(17, 17, 17, .14);
+            --paper: #FFFFFF;
+            --surface: #FFFFFF;
+            --highlight: #FFE45C;
+            --shot: #29292B;
+            --btn-bg: #111111;
+            --btn-ink: #FFFFFF;
+            --sky-a: #FFFFFF;
+            --sky-b: #F4F4F2;
+            --disc: #FFD426;
+            --l1a: #E3E3E0; --l1b: #F3F3F1;
+            --l2a: #CFCFCC; --l2b: #E6E6E3;
+            --l3a: #B1B1AE; --l3b: #D2D2CF;
+            --l4a: #868684; --l4b: #B3B3B0;
+            --l5a: #4C4C4D; --l5b: #7C7C7B;
+            --l6: #161617;
+            --band: #161617;
+            --band-accent: #FFFFFF;
+            --rim: rgba(255, 255, 255, .7);
+
+            --sun-size: clamp(84px, 10vw, 140px);
+            --sun-x: 23%;
+            --sun-top: clamp(40px, 9vw, 130px);
+            --sun-halo: 0 0 160px 70px rgba(255, 212, 38, .26);
+            --moon-size: clamp(40px, 4.4vw, 60px);
+            --moon-x: 23%;
+            --moon-top: clamp(-10px, 2vw, 30px);
+            --grain-strength: .07;
+
+            --head-font: 'Host Grotesk', sans-serif;
+            --body-font: 'Host Grotesk', sans-serif;
+            --letter-font: 'Courier Prime', monospace;
+            --hand-font: 'Nothing You Could Do', cursive;
+            --sign-font: 'Nothing You Could Do', cursive;
+            --head-size: clamp(2.2rem, 1rem + 4.1vw, 4.5rem);
+            --head-weight: 500;
+            --head-leading: 1.02;
+            --head-track: -0.045em;
+            --inset: 0px;
+            --tilt: 1.6deg;
+            --sheet-a: -1deg;
+            --sheet-b: .7deg;
+            --radius: 2px;
+            --btn-radius: 8px;
+            --rule: 1px;
+        }
+
+        :root[data-theme="dark"] {
+            --page: #09090A;
+            --ink: #F5F5F3;
+            --ink-soft: rgba(245, 245, 243, .62);
+            --line: rgba(245, 245, 243, .18);
+            --paper: #F3F3F1;
+            --surface: #161617;
+            --btn-bg: #F5F5F3;
+            --btn-ink: #111111;
+            --sky-a: #0C0C0D;
+            --sky-b: #1D1D1F;
+            --rim: rgba(255, 255, 255, .16);
+            --l1a: #303033; --l1b: #252527;
+            --l2a: #28282A; --l2b: #1E1E20;
+            --l3a: #202022; --l3b: #18181A;
+            --l4a: #19191B; --l4b: #131314;
+            --l5a: #121213; --l5b: #0D0D0E;
+            --l6: #09090A;
+            --band: #09090A;
+        }
+
+        body { letter-spacing: -0.015em; }
+        .top { padding-block: 24px; }
+        .mark { font-weight: 600; letter-spacing: -0.03em; }
+        .theme-toggle { font-weight: 400; text-decoration-thickness: 1px; }
+        .button { font-weight: 500; padding: .62em 1.15em; }
+        .button:hover { filter: none; opacity: .86; }
+
+        .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); grid-template-areas: "head photo" "side photo"; row-gap: clamp(24px, 3.4vw, 44px); }
+        .head h1 { text-wrap: balance; margin-bottom: .5em; }
+        .head .sub { color: var(--ink-soft); }
+        .photo { align-self: start; }
+        .links { line-height: 1.9; }
+        .links a { font-weight: 500; text-decoration-thickness: 1px; }
+
+        .snapshot { padding: 10px 10px 6px; }
+        .snapshot figcaption { font-size: .82em; padding: 12px 4px 4px; }
+
+        .sheets { max-width: 740px; }
+        .letter { font-size: .96em; line-height: 1.62; }
+        .letterhead { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3em; padding-bottom: 1.1em; border-bottom: 1px solid rgba(17, 17, 17, .2); font: 500 .86em/1 var(--body-font); letter-spacing: -0.01em; }
+        .letterhead b { display: inline-flex; align-items: center; gap: .55em; font-weight: 600; }
+        .letterhead b::before { content: ""; width: .8em; height: .8em; border-radius: 50%; background: #FFD426; }
+        .letterhead span { color: rgba(17, 17, 17, .6); }
+        .signature { font-size: 1.6em; }
+
+        .band .work article { border-top-color: rgba(255, 255, 255, .28); }
+        .shot { background: radial-gradient(120% 100% at 28% 0%, #3A3A3D, var(--shot) 62%); }
+        .shot i { box-shadow: 0 0 0 1px rgba(255, 255, 255, .18), -18px 22px 34px -18px rgba(0, 0, 0, .7), 0 40px 50px -24px rgba(0, 0, 0, .6); }
+        .work h3 { font-weight: 600; }
+        .block h2 { font-size: clamp(1.8rem, 1.1rem + 2.4vw, 3rem); line-height: 1.04; }
+        .steps { max-width: 40rem; }
+        .steps li { padding: .9em 0; border-top-width: 1px; }
+        .steps li::before { font-weight: 500; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+        .steps strong { font-weight: 600; }
+        .contact label { font-weight: 500; }
+        .contact input, .contact textarea { border: 1px solid var(--line); border-radius: 8px; }
+
+        @media (max-width: 760px) {
+            .hero { grid-template-columns: 1fr; grid-template-areas: "head" "photo" "side"; }
+            .photo { max-width: 240px; }
+        }
+    </style>
+    <script src="theme.js"></script>
+    <script src="depth.js"></script>
+</head>
+<body>
+    <header class="top">
+        <a class="mark" href="#top">Sunnyside</a>
+        <div class="top-actions">
+            <button class="theme-toggle" type="button" id="theme-toggle">feeling sleepy?</button>
+            <a class="button" href="#contact">Start a project</a>
+        </div>
+    </header>
+
+    <div class="stage" id="top">
+        <div class="hero">
+            <div class="head">
+                <h1>Mobile apps, designed and built by one person you can call.</h1>
+                <p class="sub">Sunnyside is Grant Bellar&rsquo;s app studio in Wichita, Kansas.</p>
+            </div>
+            <div class="photo">
+                <figure class="snapshot">
+                    <img src="face.svg" alt="Grant Bellar">
+                    <figcaption>Grant, Wichita KS</figcaption>
+                </figure>
+            </div>
+            <div class="side">
+                <ul class="links">
+                    <li><a href="#work">Recent work</a> <span>&mdash; apps I&rsquo;ve shipped</span></li>
+                    <li><a href="#services">New apps</a> <span>&mdash; from idea to App Store</span></li>
+                    <li><a href="#services">Existing apps</a> <span>&mdash; fixes, features, rewrites</span></li>
+                    <li><a href="#process">How it goes</a> <span>&mdash; four steps, no surprises</span></li>
+                    <li><a href="#letter">A note from me</a> <span>&mdash; why I work this way</span></li>
+                </ul>
+                <a class="button" href="#contact">Tell me about your app</a>
+            </div>
+        </div>
+
+        <div class="ground">
+            <div class="orb sun" data-depth=".06"></div>
+            <div class="orb moon" data-depth=".06"></div>
+            <svg class="scape" viewBox="0 0 1440 800" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                    <linearGradient id="f1" gradientUnits="userSpaceOnUse" x1="0" y1="80" x2="0" y2="290"><stop offset="0" style="stop-color: var(--l1a)"/><stop offset="1" style="stop-color: var(--l1b)"/></linearGradient>
+                    <linearGradient id="f2" gradientUnits="userSpaceOnUse" x1="0" y1="150" x2="0" y2="370"><stop offset="0" style="stop-color: var(--l2a)"/><stop offset="1" style="stop-color: var(--l2b)"/></linearGradient>
+                    <linearGradient id="f3" gradientUnits="userSpaceOnUse" x1="0" y1="235" x2="0" y2="470"><stop offset="0" style="stop-color: var(--l3a)"/><stop offset="1" style="stop-color: var(--l3b)"/></linearGradient>
+                    <linearGradient id="f4" gradientUnits="userSpaceOnUse" x1="0" y1="330" x2="0" y2="590"><stop offset="0" style="stop-color: var(--l4a)"/><stop offset="1" style="stop-color: var(--l4b)"/></linearGradient>
+                    <linearGradient id="f5" gradientUnits="userSpaceOnUse" x1="0" y1="440" x2="0" y2="700"><stop offset="0" style="stop-color: var(--l5a)"/><stop offset="1" style="stop-color: var(--l5b)"/></linearGradient>
+                </defs>
+                <path class="ridge" data-depth=".05" fill="url(#f1)" d="M0 150C180 120 320 90 480 110S760 190 940 150 1260 70 1440 110V840H0Z"/>
+                <path class="ridge" data-depth=".04" fill="url(#f2)" d="M0 215C160 235 300 200 470 190S800 140 980 205 1300 250 1440 200V840H0Z"/>
+                <path class="ridge" data-depth=".03" fill="url(#f3)" d="M0 290C220 250 400 310 620 300S960 230 1150 270 1360 300 1440 285V840H0Z"/>
+                <path class="ridge" data-depth=".02" fill="url(#f4)" d="M0 370C150 365 320 420 500 440S780 400 920 370 1280 350 1440 320V840H0Z"/>
+                <path class="ridge" data-depth=".01" fill="url(#f5)" d="M0 480C240 440 500 540 780 525S1200 430 1440 480V840H0Z"/>
+                <path class="ridge" style="fill: var(--l6)" d="M0 620C300 570 600 660 900 630S1260 580 1440 640V840H0Z"/>
+            </svg>
+            <div class="sheets" id="letter">
+                <div class="letter">
+                    <div class="letterhead"><b>Sunnyside</b><span>Wichita, Kansas</span></div>
+                    <p>Hi,</p>
+                    <p>I&rsquo;m Grant. I run Sunnyside, and I&rsquo;m the person who will design, build, and ship your app.</p>
+                    <p>Most studios sell you a team and then hand your project to whoever is free. <mark>Here you get me, from the first call to the App Store.</mark> That keeps things fast, and it means the person you explain your business to is the person writing the code.</p>
+                    <p id="services">I take on new apps that start from an idea, and existing apps that need fixes, features, or a rewrite. After launch I keep them updated.</p>
+                    <p>If that sounds like what you need, send me a note. I read and answer every one.</p>
+                    <div class="signoff">
+                        <img src="face.svg" alt="">
+                        <div>
+                            <div class="signature">Grant Bellar</div>
+                            <small>Founder, Sunnyside</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="band">
+        <section class="block" id="work">
+            <h2>Recent work</h2>
+            <div class="work">
+                <article><div class="shot"><i></i></div><h3>Project one</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+                <article><div class="shot"><i></i></div><h3>Project two</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+                <article><div class="shot"><i></i></div><h3>Project three</h3><p>A short line about what it does and who it&rsquo;s for.</p></article>
+            </div>
+        </section>
+    </div>
+
+    <section class="block split" id="process">
+        <h2>How it goes</h2>
+        <ol class="steps">
+            <li><span><strong>Talk.</strong> You tell me what you need.</span></li>
+            <li><span><strong>Scope.</strong> I send a plan and a price.</span></li>
+            <li><span><strong>Build.</strong> You see progress every week.</span></li>
+            <li><span><strong>Launch.</strong> It goes live and I stick around.</span></li>
+        </ol>
+    </section>
+
+    <section class="block split contact" id="contact">
+        <h2>Tell me about your app</h2>
+        <p>I answer every message myself, usually within a day.</p>
+        <form>
+            <label>Your email <input type="email" name="email" required></label>
+            <label>What are you building? <textarea name="message" required></textarea></label>
+            <button class="button" type="submit">Send message</button>
+        </form>
+    </section>
+
+    <footer>&copy; 2026 Sunnyside. Made in Wichita, Kansas.</footer>
+
+    <script src="switcher.js"></script>
+</body>
+</html>
