@@ -22,14 +22,14 @@ The look comes from design B in `designs/b.html`:
 - One pale blue `--sky` stage holds the whole page like a desk, and every piece of content sits on it as paper: the photo snapshot, the letter, the project sheets, and the contact form as a reply sheet. Only the header and footer sit outside it.
 - Rotated photo snapshot with a handwritten caption
 - Letter on stacked paper sheets with a yellow marker highlight and a signature
-- Schibsted Grotesk for headlines, sheet titles and the wordmark; Hanken Grotesk for body text; Homemade Apple for handwriting (Google Fonts)
+- Schibsted Grotesk for headlines, sheet titles and the wordmark; Hanken Grotesk for body text; Homemade Apple for handwriting; IBM Plex Mono only for hard facts like the work sheet numbers (Google Fonts)
 - Logo is the G2c "Reflection" mark: a half sun over a horizon line with a yellow reflection, inline SVG in the header `.mark` and in `favicon.svg`
 - One breakpoint at 760px where the hero stacks
 - No dark mode
 
 ## Work Section
 
-Each project is an `article.sheet` inside `.work-list` in `index.html`, with `data-offer` (used for the stack's filter chips), a `.shot` screenshot, tag, title, the problem as a one-line summary, and a what I built / what changed list. Clients and companies are never named or described; the problem and solution carry each sheet. Each sheet has an inline SVG illustration split into before (left) and after (right) with handwritten labels. The problem is drawn in `--trouble` red (tangles, blanks, question marks, crossed-out pieces); the solution gets one marker-yellow highlight and a blue check badge. Styles are the `.shot` classes in `styles.css`.
+Each project is an `article.sheet` inside `.work-list` in `index.html`, with `data-offer` (used for the stack's filter chips), a `.shot` screenshot, tag, title, the problem as a one-line summary, a `.readout` with the project's key number on a strip of tractor-feed greenbar printout, and a what I built / what changed list. Clients and companies are never named or described; the problem and solution carry each sheet. Each sheet has an inline SVG illustration split into before (left) and after (right) with handwritten labels. The problem is drawn in `--trouble` red (tangles, blanks, question marks, crossed-out pieces); the solution gets one marker-yellow highlight and a blue check badge. Styles are the `.shot` classes in `styles.css`.
 
 Two layouts read the same markup:
 - Desk (default): sheets laid out in a grid, "Read the whole story" opens a dialog. A horizontal swipe row on phones. Also the layout without JavaScript.
