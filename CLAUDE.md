@@ -28,7 +28,7 @@ The look comes from design B in `designs/b.html`:
 
 ## Work Section
 
-Each project is an `article.sheet` inside `.work-list` in `index.html`, with `data-offer` (used for the stack's filter chips), a `.shot` screenshot, tag, title, who it was for, and a problem / what I built / what changed list. The projects are samples until real ones are written up.
+Each project is an `article.sheet` inside `.work-list` in `index.html`, with `data-offer` (used for the stack's filter chips), a `.shot` screenshot, tag, title, the problem as a one-line summary, and a what I built / what changed list. Clients and companies are never named or described; the problem and solution carry each sheet. Each sheet has an inline SVG illustration: ink lines on a dotted grid with one marker-yellow highlight (classes thin, bold, paper, ink, hl, t).
 
 Two layouts read the same markup:
 - Desk (default): sheets laid out in a grid, "Read the whole story" opens a dialog. A horizontal swipe row on phones. Also the layout without JavaScript.

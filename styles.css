@@ -163,18 +163,20 @@ footer { max-width: 1120px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 56px)
 }
 .sheet .tag { display: inline-block; font-size: .72em; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: .6em; }
 .sheet h3 { margin: 0 0 .25em; font-size: clamp(1.25rem, 1rem + 1vw, 1.7rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; }
-.sheet .who { margin: 0 0 1em; color: var(--ink-soft); }
+.sheet .summary { margin: 0 0 1em; color: var(--ink-soft); }
 .sheet dl { margin: 0; }
 .sheet dl div { padding: .6em 0; border-top: 1px solid var(--rule); }
 .sheet dt { font-weight: 800; font-size: .85em; }
 .sheet dd { margin: .1em 0 0; }
 
-/* Screenshot taped to the sheet. The <i> is a placeholder browser window until real images exist. */
+/* Illustration taped to the sheet: ink line drawing on graph paper, one marker-yellow highlight. */
 .shot {
     position: relative;
     margin: 0 0 1.2em;
     aspect-ratio: 16 / 10;
-    background: hsl(var(--hue, 210) 45% 92%);
+    background-color: var(--paper);
+    background-image: radial-gradient(rgba(23, 42, 69, .14) 1px, transparent 1.4px);
+    background-size: 14px 14px;
     border: 1px solid rgba(23, 42, 69, .12);
     transform: rotate(-.6deg);
 }
@@ -185,24 +187,20 @@ footer { max-width: 1120px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 56px)
     background: rgba(255, 228, 92, .55);
     box-shadow: 0 1px 1px rgba(23, 42, 69, .08);
 }
-.shot::before { left: 10%; transform: rotate(-4deg); }
-.shot::after { right: 10%; transform: rotate(5deg); }
+.shot::before { left: 10%; transform: rotate(-4deg); z-index: 1; }
+.shot::after { right: 10%; transform: rotate(5deg); z-index: 1; }
 .shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.shot i {
-    position: absolute; inset: 12% 10% 0;
-    background: #fff;
-    border-radius: 6px 6px 0 0;
-    box-shadow: 0 0 0 1px rgba(23, 42, 69, .1);
-    background-image:
-        radial-gradient(circle at 12px 10px, #E1E5EA 3px, transparent 4px),
-        radial-gradient(circle at 24px 10px, #E1E5EA 3px, transparent 4px),
-        radial-gradient(circle at 36px 10px, #E1E5EA 3px, transparent 4px),
-        linear-gradient(#F3F5F8 0 20px, transparent 20px),
-        linear-gradient(90deg, hsl(var(--hue, 210) 60% 55%) 0 0);
-    background-size: auto, auto, auto, auto, 40% 10px;
-    background-position: 0 0, 0 0, 0 0, 0 0, 8% 38px;
-    background-repeat: no-repeat;
+.shot svg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    fill: none; stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
 }
+.shot .thin { stroke-width: 1.4; opacity: .55; }
+.shot .bold { stroke-width: 4; }
+.shot .paper { fill: var(--paper); }
+.shot .ink { fill: var(--ink); }
+.shot .hl { fill: var(--marker); stroke: none; }
+.shot .t { fill: var(--ink); stroke: none; font: 800 17px 'Hanken Grotesk', sans-serif; }
 
 /* Desk: every sheet laid out at once. Also the layout without JavaScript. */
 .work-list[data-layout="desk"] {
@@ -218,7 +216,7 @@ footer { max-width: 1120px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 56px)
 [data-layout="desk"] .sheet:nth-child(3n) { transform: rotate(-.5deg) translateY(-6px); }
 [data-layout="desk"] .sheet:hover, [data-layout="desk"] .sheet:focus-within { transform: rotate(0) translateY(-4px); box-shadow: 0 1px 3px rgba(23, 42, 69, .18), 0 24px 40px -20px rgba(23, 42, 69, .45); }
 [data-layout="desk"] .sheet h3 { font-size: 1.15em; }
-[data-layout="desk"] .sheet .who { font-size: .9em; margin-bottom: .8em; }
+[data-layout="desk"] .sheet .summary { font-size: .9em; margin-bottom: .8em; }
 [data-layout="desk"].enhanced .sheet dl { display: none; }
 .sheet .more { font: inherit; font-weight: 600; color: var(--blue); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .16em; }
 
