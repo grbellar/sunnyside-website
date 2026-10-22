@@ -4,87 +4,52 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a simple static website for Sunnyside Solutions, a mobile app development studio based in Wichita, Kansas. The website consists of three main files in the root directory:
+Static website for Sunnyside, Grant Bellar's software studio in Wichita, Kansas. Grant turns prototypes founders build themselves into real products, and builds automations, internal tools, and dashboards for small businesses. Mobile apps are no longer the focus.
 
-- `index.html` - Single-page website with hero section, contact form, animated elements, and favicon support
-- `styles.css` - Complete CSS with custom properties, animations, responsive design, and dark/light mode theming
-- `script.js` - JavaScript for interactive features, animations, and theme switching functionality
+The live site is three files in the root directory:
 
-## Architecture
+- `index.html` - Single page: photo snapshot and link list hero, a short letter from Grant, work, and contact form
+- `styles.css` - All styling, using CSS custom properties in `:root`
+- `script.js` - Sends the contact form to Formspree with `fetch`, and runs the work section layouts
 
-**Static Website Structure:**
-- Single-page application without build tools or frameworks
-- Pure HTML/CSS/JavaScript with no dependencies
-- CSS custom properties for consistent design system with dark/light mode theming
-- Responsive design with mobile-first approach
-- Contact form uses Formspree service (configured with form ID: xrbapzlz)
-- Theme persistence using localStorage
-- Favicon support with multiple formats (SVG, PNG, Apple Touch Icon)
+Images live in `images/`:
+- `grant.jpg` - Hero snapshot photo, 1000x1250 (4:5), EXIF stripped
+- `grant-face.jpg` - 256px square crop used in the letter signoff
 
-**Key Interactive Features:**
-- Dark/light mode theme toggle with theme persistence (localStorage)
-- Animated sun logo (light mode) and moon logo with stars (dark mode)
-- Dynamic hero title text that changes based on theme ("Sunshine-powered" vs "Moonlight-powered")
-- Theme-aware header background colors that adapt on scroll
-- Floating cards with parallax effects
-- Smooth scrolling navigation
-- Contact form with validation
-- Button ripple effects
-- Intersection Observer animations for fade-in effects
+## Design
 
-**Design System:**
-- CSS custom properties in `:root` for light mode and `[data-theme="dark"]` for dark mode
-- Light mode: warm colors (oranges, yellows) with sun-themed gradients
-- Dark mode: cool colors (blues, purples) with night-themed gradients and moon logo
-- Gradient themes: sunset/ocean (light), blue/purple (dark), plus moon gradient
-- Inter font family from Google Fonts
-- Responsive breakpoints at 768px and 480px
+The look comes from design B in `designs/b.html`:
+- One pale blue `--sky` stage holds the whole page like a desk, and every piece of content sits on it as paper: the photo snapshot, the letter, the project sheets, and the contact form as a reply sheet. Only the header and footer sit outside it.
+- Rotated photo snapshot with a handwritten caption
+- Letter on stacked paper sheets with a yellow marker highlight and a signature
+- Hanken Grotesk for text, Homemade Apple for handwriting (Google Fonts)
+- One breakpoint at 760px where the hero stacks
+- No dark mode
 
-## Development Commands
+## Work Section
 
-This is a static website with no build process. To develop:
+Each project is an `article.sheet` inside `.work-list` in `index.html`, with `data-offer` (used for the stack's filter chips), a `.shot` screenshot, tag, title, who it was for, and a problem / what I built / what changed list. The projects are samples until real ones are written up.
 
-1. Open `index.html` in a web browser
-2. Use a local server for development (e.g., `python -m http.server` or VS Code Live Server)
-3. Edit files directly - no compilation needed
+Two layouts read the same markup:
+- Desk (default): sheets laid out in a grid, "Read the whole story" opens a dialog. A horizontal swipe row on phones. Also the layout without JavaScript.
+- Stack (`?work=stack`): one sheet on a pile, swipe, drag, arrow buttons or keys, with filter chips.
 
-**No package.json, build tools, or test frameworks are present.**
+## Contact Form
 
-## Key Components
+Posts to `https://formspree.io/f/xrbapzlz`. Fields: email, link, need, budget, message. Without JavaScript it falls back to a normal form post.
 
-**Theme System:**
-- Theme toggle button (`#theme-toggle`) switches between light/dark modes
-- Theme persistence via localStorage with 'theme' key
-- Data attribute `data-theme="dark"` applied to document element
-- Dynamic text updates: button text and hero title change based on theme
-- Header colors adapt to current theme on scroll
+## Development
 
-**Logo System:**
-- **Sun Logo (Light Mode):** `.sun-logo` class with center and 8 rays, `sunSpin` animation (20s duration)
-- **Moon Logo (Dark Mode):** `.moon-logo` class with craters and twinkling stars, `starTwinkle` animation
-- Logo visibility controlled by `[data-theme="dark"]` CSS selectors
-- Two size variants for both: normal (32px/20px) and small (24px/16px)
+No build process, dependencies, or tests. Run a local server from the repo root:
 
-**Contact Form:**
-- Points to `https://formspree.io/f/xrbapzlz` (configured and functional)
-- Includes email and message fields with validation
-- Styled to match current theme
+```
+python3 -m http.server 8000
+```
 
-**Interactive Elements:**
-- Theme toggle updates button text ("feeling sleepy?" vs "good morning!")
-- Hero title dynamically changes ("Sunshine-powered" vs "Moonlight-powered")
-- Floating cards have parallax scrolling effects
-- Header background adapts colors and opacity based on theme and scroll position
-- Navigation includes smooth scrolling to sections
+## Deployment
 
-## File Organization
+`Dockerfile` builds a Caddy image serving the root files and `images/`. When adding a new top-level file or directory the live site needs, add it to the `COPY` lines. `designs/` is not deployed.
 
-All code is contained in the root directory:
-- HTML structure and content in `index.html` (includes favicon links and dual logo system)
-- All styling, animations, and theme definitions in `styles.css` (light/dark mode CSS custom properties)
-- All interactivity, theme switching, and DOM manipulation in `script.js`
+## Design Mockups
 
-**Additional Assets Expected:**
-- Favicon files: `favicon.svg`, `favicon-32x32.png`, `favicon-16x16.png`, `apple-touch-icon.png`
-
-The codebase follows a simple, maintainable structure without external dependencies or complex tooling. The theme system is implemented using CSS custom properties and data attributes, making it easy to extend or modify color schemes.
+`designs/` holds the rebrand exploration: variations A through F, B1 through B10, and G1 through G6 (the live site with new fonts and logo marks, plus `logos.html` comparing the marks), G2a through G5c (refinements of G2, G3 and G5, with `marks.html` showing each mark beside its fonts), and `palette-*.html` (G2a in seven palettes, compared in `palettes.html`, and round eight in `palettes2.html`, with reasoning in `palettes.md`), an index page, and `switcher.js` for moving between them. `designs/legacy/` is the previous sun/moon themed site. `designs/copy.md` has copy drafts. These are reference only and are not part of the live site.
