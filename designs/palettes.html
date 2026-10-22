@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sunnyside palettes</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;600;700&family=Homemade+Apple&display=swap" rel="stylesheet">
+      <style>
+          body { margin: 0; padding: 48px 24px 96px; background: #fff; color: #1a1a1a;
+              font: 400 17px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+          main { max-width: 1040px; margin: 0 auto; }
+          h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+          main > p { margin: 0 0 8px; color: #555; max-width: 46em; }
+          .pal { padding: 40px 0; border-bottom: 1px solid #ddd; }
+          h2 { font-size: 22px; margin: 0; }
+          h2 a { color: inherit; text-decoration: none; }
+          .blurb { margin: 2px 0 0; color: #555; max-width: 46em; }
+          .links { margin: 2px 0 16px; font-size: 15px; }
+          .links a { color: #1a1a1a; }
+          .chips { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-bottom: 16px; }
+          .chip { font-size: 13px; line-height: 1.3; }
+          .chip .sw { height: 56px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.1); margin-bottom: 6px; }
+          .chip strong, .chip span, .chip small { display: block; }
+          .chip span { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+          .chip small { color: #777; }
+          .preview { background: var(--paper); color: var(--ink); border-radius: 8px; box-shadow: 0 0 0 1px rgba(0,0,0,.1); overflow: hidden;
+              font-family: 'Instrument Sans', sans-serif; }
+          .bar { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; }
+          .word { display: flex; align-items: center; gap: .35em; font: 400 22px/1 'Young Serif', serif; }
+          .word svg { width: 1.3em; height: 1.3em; }
+          .btn { background: var(--btn); color: var(--btn-text); font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 3px; }
+          .stage { background: var(--stage); margin: 0 18px 18px; padding: 28px; display: grid; grid-template-columns: 200px 1fr; gap: 28px; align-items: center; }
+          .marks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+          .marks svg { display: block; width: 100%; height: auto; }
+          .lnk { margin: 0 0 10px; }
+          .lnk u { color: var(--accent); font-weight: 600; text-decoration-thickness: .08em; text-underline-offset: .16em; }
+          .h { margin: 0 0 16px; font: 400 30px/1.1 'Young Serif', serif; letter-spacing: -0.02em; }
+          .letter { background: var(--paper); padding: 14px 16px; font-size: 16px; }
+          .letter mark { background: var(--marker); color: inherit; padding: .04em .12em; }
+          .soft { display: block; color: var(--soft); font-size: 14px; margin-top: 4px; }
+          .contrast { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 13px; color: #666; }
+          .contrast b { color: #1a1a1a; }
+          @media (max-width: 760px) { .chips { grid-template-columns: repeat(4, 1fr); } .stage { grid-template-columns: 1fr; } .marks { max-width: 200px; } }
+      </style>
+  </head>
+  <body>
+      <main>
+          <h1>Sunnyside palettes</h1>
+          <p>Round seven. Seven palettes on G2a's type, each showing the G2, G2a and G2c marks recolored. The numbers under each are contrast ratios. 4.5 is the minimum for readable text, and everything here clears it. The reasoning is in <code>palettes.md</code>.</p>
+          <section class="pal">
+              <h2><a href="palette-morning.html">Clear morning</a></h2>
+              <p class="links"><a href="palette-morning.html">Full page</a> &middot; <a href="https://coolors.co/e9f0f8-fffdf8-1b2a3a-1f5bb8-ffc226-ffe27a">Open in Coolors</a></p>
+              <div class="chips"><div class="chip"><div class="sw" style="background:#E9F0F8"></div><strong>Stage</strong><span>#E9F0F8</span><small>hero and letter background</small></div><div class="chip"><div class="sw" style="background:#FFFDF8"></div><strong>Paper</strong><span>#FFFDF8</span><small>page and letter</small></div><div class="chip"><div class="sw" style="background:#1B2A3A"></div><strong>Ink</strong><span>#1B2A3A</span><small>text and mark</small></div><div class="chip"><div class="sw" style="background:#56657A"></div><strong>Soft ink</strong><span>#56657A</span><small>secondary text</small></div><div class="chip"><div class="sw" style="background:#1F5BB8"></div><strong>Accent</strong><span>#1F5BB8</span><small>links and buttons</small></div><div class="chip"><div class="sw" style="background:#FFC226"></div><strong>Sun</strong><span>#FFC226</span><small>the mark</small></div><div class="chip"><div class="sw" style="background:#FFE27A"></div><strong>Marker</strong><span>#FFE27A</span><small>highlight</small></div></div>
+              <div class="preview" style="--stage:#E9F0F8;--paper:#FFFDF8;--ink:#1B2A3A;--soft:#56657A;--accent:#1F5BB8;--btn:#1F5BB8;--btn-text:#FFFFFF;--marker:#FFE27A">
+                  <div class="bar"><div class="word"><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFC226"/><path d="M3 22.5h26" stroke="#1B2A3A" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#1B2A3A" stroke-width="2.6" stroke-linecap="round"/></g></svg>Sunnyside</div><span class="btn">Start a project</span></div>
+                  <div class="stage">
+                      <div class="marks"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0z" fill="#FFC226"/><path d="M2.5 20h27M9 25h14" stroke="#1B2A3A" stroke-width="3" stroke-linecap="round"/><path d="M16 3.5v3M6.8 7.3l2 2M25.2 7.3l-2 2" stroke="#1B2A3A" stroke-width="2.6" stroke-linecap="round"/></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFC226"/><path d="M3 22.5h26" stroke="#1B2A3A" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#1B2A3A" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#FFC226"/><path d="M2.5 20.5h27" stroke="#1B2A3A" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#FFC226" stroke-width="2.6" stroke-linecap="round"/></svg></span></div>
+                      <div>
+                          <p class="lnk"><u>Prototype to product</u> &mdash; ready for real users and payments</p>
+                          <p class="h">Your idea or your business, built and kept running by one person you can call.</p>
+                          <div class="letter">With me, <mark>you work directly with the person doing the work.</mark> <span class="soft">Founder, Sunnyside</span></div>
+                      </div>
+                  </div>
+              </div>
+              <ul class="contrast"><li>ink on stage <b>12.7</b></li><li>ink on paper <b>14.4</b></li><li>soft text on paper <b>5.8</b></li><li>links on stage <b>5.6</b></li><li>links on paper <b>6.4</b></li><li>button text <b>6.5</b></li></ul>
+          </section>
+        <section class="pal">
+              <h2><a href="palette-prairie.html">Prairie</a></h2>
+              <p class="links"><a href="palette-prairie.html">Full page</a> &middot; <a href="https://coolors.co/f3ead7-fffbf2-2a2219-2b4c7e-f4b02a-fbdd84">Open in Coolors</a></p>
+              <div class="chips"><div class="chip"><div class="sw" style="background:#F3EAD7"></div><strong>Stage</strong><span>#F3EAD7</span><small>hero and letter background</small></div><div class="chip"><div class="sw" style="background:#FFFBF2"></div><strong>Paper</strong><span>#FFFBF2</span><small>page and letter</small></div><div class="chip"><div class="sw" style="background:#2A2219"></div><strong>Ink</strong><span>#2A2219</span><small>text and mark</small></div><div class="chip"><div class="sw" style="background:#6B5E4E"></div><strong>Soft ink</strong><span>#6B5E4E</span><small>secondary text</small></div><div class="chip"><div class="sw" style="background:#2B4C7E"></div><strong>Accent</strong><span>#2B4C7E</span><small>links and buttons</small></div><div class="chip"><div class="sw" style="background:#F4B02A"></div><strong>Sun</strong><span>#F4B02A</span><small>the mark</small></div><div class="chip"><div class="sw" style="background:#FBDD84"></div><strong>Marker</strong><span>#FBDD84</span><small>highlight</small></div></div>
+              <div class="preview" style="--stage:#F3EAD7;--paper:#FFFBF2;--ink:#2A2219;--soft:#6B5E4E;--accent:#2B4C7E;--btn:#2B4C7E;--btn-text:#FFFFFF;--marker:#FBDD84">
+                  <div class="bar"><div class="word"><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#F4B02A"/><path d="M3 22.5h26" stroke="#2A2219" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#2A2219" stroke-width="2.6" stroke-linecap="round"/></g></svg>Sunnyside</div><span class="btn">Start a project</span></div>
+                  <div class="stage">
+                      <div class="marks"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0z" fill="#F4B02A"/><path d="M2.5 20h27M9 25h14" stroke="#2A2219" stroke-width="3" stroke-linecap="round"/><path d="M16 3.5v3M6.8 7.3l2 2M25.2 7.3l-2 2" stroke="#2A2219" stroke-width="2.6" stroke-linecap="round"/></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#F4B02A"/><path d="M3 22.5h26" stroke="#2A2219" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#2A2219" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#F4B02A"/><path d="M2.5 20.5h27" stroke="#2A2219" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#F4B02A" stroke-width="2.6" stroke-linecap="round"/></svg></span></div>
+                      <div>
+                          <p class="lnk"><u>Prototype to product</u> &mdash; ready for real users and payments</p>
+                          <p class="h">Your idea or your business, built and kept running by one person you can call.</p>
+                          <div class="letter">With me, <mark>you work directly with the person doing the work.</mark> <span class="soft">Founder, Sunnyside</span></div>
+                      </div>
+                  </div>
+              </div>
+              <ul class="contrast"><li>ink on stage <b>13.1</b></li><li>ink on paper <b>15.2</b></li><li>soft text on paper <b>6.1</b></li><li>links on stage <b>7.2</b></li><li>links on paper <b>8.3</b></li><li>button text <b>8.6</b></li></ul>
+          </section>
+        <section class="pal">
+              <h2><a href="palette-golden.html">Golden hour</a></h2>
+              <p class="links"><a href="palette-golden.html">Full page</a> &middot; <a href="https://coolors.co/fbe7cf-fffaf3-2b1e16-b0431e-ffb01f-ffd98a">Open in Coolors</a></p>
+              <div class="chips"><div class="chip"><div class="sw" style="background:#FBE7CF"></div><strong>Stage</strong><span>#FBE7CF</span><small>hero and letter background</small></div><div class="chip"><div class="sw" style="background:#FFFAF3"></div><strong>Paper</strong><span>#FFFAF3</span><small>page and letter</small></div><div class="chip"><div class="sw" style="background:#2B1E16"></div><strong>Ink</strong><span>#2B1E16</span><small>text and mark</small></div><div class="chip"><div class="sw" style="background:#6E5A4A"></div><strong>Soft ink</strong><span>#6E5A4A</span><small>secondary text</small></div><div class="chip"><div class="sw" style="background:#B0431E"></div><strong>Accent</strong><span>#B0431E</span><small>links and buttons</small></div><div class="chip"><div class="sw" style="background:#FFB01F"></div><strong>Sun</strong><span>#FFB01F</span><small>the mark</small></div><div class="chip"><div class="sw" style="background:#FFD98A"></div><strong>Marker</strong><span>#FFD98A</span><small>highlight</small></div></div>
+              <div class="preview" style="--stage:#FBE7CF;--paper:#FFFAF3;--ink:#2B1E16;--soft:#6E5A4A;--accent:#B0431E;--btn:#B0431E;--btn-text:#FFFFFF;--marker:#FFD98A">
+                  <div class="bar"><div class="word"><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB01F"/><path d="M3 22.5h26" stroke="#2B1E16" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#2B1E16" stroke-width="2.6" stroke-linecap="round"/></g></svg>Sunnyside</div><span class="btn">Start a project</span></div>
+                  <div class="stage">
+                      <div class="marks"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0z" fill="#FFB01F"/><path d="M2.5 20h27M9 25h14" stroke="#2B1E16" stroke-width="3" stroke-linecap="round"/><path d="M16 3.5v3M6.8 7.3l2 2M25.2 7.3l-2 2" stroke="#2B1E16" stroke-width="2.6" stroke-linecap="round"/></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB01F"/><path d="M3 22.5h26" stroke="#2B1E16" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#2B1E16" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#FFB01F"/><path d="M2.5 20.5h27" stroke="#2B1E16" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#FFB01F" stroke-width="2.6" stroke-linecap="round"/></svg></span></div>
+                      <div>
+                          <p class="lnk"><u>Prototype to product</u> &mdash; ready for real users and payments</p>
+                          <p class="h">Your idea or your business, built and kept running by one person you can call.</p>
+                          <div class="letter">With me, <mark>you work directly with the person doing the work.</mark> <span class="soft">Founder, Sunnyside</span></div>
+                      </div>
+                  </div>
+              </div>
+              <ul class="contrast"><li>ink on stage <b>13.4</b></li><li>ink on paper <b>15.6</b></li><li>soft text on paper <b>6.3</b></li><li>links on stage <b>4.8</b></li><li>links on paper <b>5.5</b></li><li>button text <b>5.7</b></li></ul>
+          </section>
+        <section class="pal">
+              <h2><a href="palette-dusk.html">Dusk</a></h2>
+              <p class="links"><a href="palette-dusk.html">Full page</a> &middot; <a href="https://coolors.co/ece8f3-fffcf7-221f3a-4338a6-ffb238-ffd98f">Open in Coolors</a></p>
+              <div class="chips"><div class="chip"><div class="sw" style="background:#ECE8F3"></div><strong>Stage</strong><span>#ECE8F3</span><small>hero and letter background</small></div><div class="chip"><div class="sw" style="background:#FFFCF7"></div><strong>Paper</strong><span>#FFFCF7</span><small>page and letter</small></div><div class="chip"><div class="sw" style="background:#221F3A"></div><strong>Ink</strong><span>#221F3A</span><small>text and mark</small></div><div class="chip"><div class="sw" style="background:#5E5A78"></div><strong>Soft ink</strong><span>#5E5A78</span><small>secondary text</small></div><div class="chip"><div class="sw" style="background:#4338A6"></div><strong>Accent</strong><span>#4338A6</span><small>links and buttons</small></div><div class="chip"><div class="sw" style="background:#FFB238"></div><strong>Sun</strong><span>#FFB238</span><small>the mark</small></div><div class="chip"><div class="sw" style="background:#FFD98F"></div><strong>Marker</strong><span>#FFD98F</span><small>highlight</small></div></div>
+              <div class="preview" style="--stage:#ECE8F3;--paper:#FFFCF7;--ink:#221F3A;--soft:#5E5A78;--accent:#4338A6;--btn:#4338A6;--btn-text:#FFFFFF;--marker:#FFD98F">
+                  <div class="bar"><div class="word"><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB238"/><path d="M3 22.5h26" stroke="#221F3A" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#221F3A" stroke-width="2.6" stroke-linecap="round"/></g></svg>Sunnyside</div><span class="btn">Start a project</span></div>
+                  <div class="stage">
+                      <div class="marks"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0z" fill="#FFB238"/><path d="M2.5 20h27M9 25h14" stroke="#221F3A" stroke-width="3" stroke-linecap="round"/><path d="M16 3.5v3M6.8 7.3l2 2M25.2 7.3l-2 2" stroke="#221F3A" stroke-width="2.6" stroke-linecap="round"/></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB238"/><path d="M3 22.5h26" stroke="#221F3A" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#221F3A" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#FFB238"/><path d="M2.5 20.5h27" stroke="#221F3A" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#FFB238" stroke-width="2.6" stroke-linecap="round"/></svg></span></div>
+                      <div>
+                          <p class="lnk"><u>Prototype to product</u> &mdash; ready for real users and payments</p>
+                          <p class="h">Your idea or your business, built and kept running by one person you can call.</p>
+                          <div class="letter">With me, <mark>you work directly with the person doing the work.</mark> <span class="soft">Founder, Sunnyside</span></div>
+                      </div>
+                  </div>
+              </div>
+              <ul class="contrast"><li>ink on stage <b>13.1</b></li><li>ink on paper <b>15.5</b></li><li>soft text on paper <b>6.4</b></li><li>links on stage <b>7.4</b></li><li>links on paper <b>8.7</b></li><li>button text <b>8.9</b></li></ul>
+          </section>
+        <section class="pal">
+              <h2><a href="palette-clay.html">Sky and clay</a></h2>
+              <p class="links"><a href="palette-clay.html">Full page</a> &middot; <a href="https://coolors.co/e2ecef-fffcf7-1d2a30-a8432a-ffc233-ffe08a">Open in Coolors</a></p>
+              <div class="chips"><div class="chip"><div class="sw" style="background:#E2ECEF"></div><strong>Stage</strong><span>#E2ECEF</span><small>hero and letter background</small></div><div class="chip"><div class="sw" style="background:#FFFCF7"></div><strong>Paper</strong><span>#FFFCF7</span><small>page and letter</small></div><div class="chip"><div class="sw" style="background:#1D2A30"></div><strong>Ink</strong><span>#1D2A30</span><small>text and mark</small></div><div class="chip"><div class="sw" style="background:#546670"></div><strong>Soft ink</strong><span>#546670</span><small>secondary text</small></div><div class="chip"><div class="sw" style="background:#A8432A"></div><strong>Accent</strong><span>#A8432A</span><small>links and buttons</small></div><div class="chip"><div class="sw" style="background:#FFC233"></div><strong>Sun</strong><span>#FFC233</span><small>the mark</small></div><div class="chip"><div class="sw" style="background:#FFE08A"></div><strong>Marker</strong><span>#FFE08A</span><small>highlight</small></div></div>
+              <div class="preview" style="--stage:#E2ECEF;--paper:#FFFCF7;--ink:#1D2A30;--soft:#546670;--accent:#A8432A;--btn:#A8432A;--btn-text:#FFFFFF;--marker:#FFE08A">
+                  <div class="bar"><div class="word"><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFC233"/><path d="M3 22.5h26" stroke="#1D2A30" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#1D2A30" stroke-width="2.6" stroke-linecap="round"/></g></svg>Sunnyside</div><span class="btn">Start a project</span></div>
+                  <div class="stage">
+                      <div class="marks"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0z" fill="#FFC233"/><path d="M2.5 20h27M9 25h14" stroke="#1D2A30" stroke-width="3" stroke-linecap="round"/><path d="M16 3.5v3M6.8 7.3l2 2M25.2 7.3l-2 2" stroke="#1D2A30" stroke-width="2.6" stroke-linecap="round"/></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFC233"/><path d="M3 22.5h26" stroke="#1D2A30" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#1D2A30" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#FFC233"/><path d="M2.5 20.5h27" stroke="#1D2A30" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#FFC233" stroke-width="2.6" stroke-linecap="round"/></svg></span></div>
+                      <div>
+                          <p class="lnk"><u>Prototype to product</u> &mdash; ready for real users and payments</p>
+                          <p class="h">Your idea or your business, built and kept running by one person you can call.</p>
+                          <div class="letter">With me, <mark>you work directly with the person doing the work.</mark> <span class="soft">Founder, Sunnyside</span></div>
+                      </div>
+                  </div>
+              </div>
+              <ul class="contrast"><li>ink on stage <b>12.3</b></li><li>ink on paper <b>14.4</b></li><li>soft text on paper <b>5.8</b></li><li>links on stage <b>5.0</b></li><li>links on paper <b>5.9</b></li><li>button text <b>6.0</b></li></ul>
+          </section>
+        <section class="pal">
+              <h2><a href="palette-lake.html">Lake</a></h2>
+              <p class="links"><a href="palette-lake.html">Full page</a> &middot; <a href="https://coolors.co/e4ebe3-fffdf8-1e2a24-2e6b57-ffb627-ffdf85">Open in Coolors</a></p>
+              <div class="chips"><div class="chip"><div class="sw" style="background:#E4EBE3"></div><strong>Stage</strong><span>#E4EBE3</span><small>hero and letter background</small></div><div class="chip"><div class="sw" style="background:#FFFDF8"></div><strong>Paper</strong><span>#FFFDF8</span><small>page and letter</small></div><div class="chip"><div class="sw" style="background:#1E2A24"></div><strong>Ink</strong><span>#1E2A24</span><small>text and mark</small></div><div class="chip"><div class="sw" style="background:#56655C"></div><strong>Soft ink</strong><span>#56655C</span><small>secondary text</small></div><div class="chip"><div class="sw" style="background:#2E6B57"></div><strong>Accent</strong><span>#2E6B57</span><small>links and buttons</small></div><div class="chip"><div class="sw" style="background:#FFB627"></div><strong>Sun</strong><span>#FFB627</span><small>the mark</small></div><div class="chip"><div class="sw" style="background:#FFDF85"></div><strong>Marker</strong><span>#FFDF85</span><small>highlight</small></div></div>
+              <div class="preview" style="--stage:#E4EBE3;--paper:#FFFDF8;--ink:#1E2A24;--soft:#56655C;--accent:#2E6B57;--btn:#2E6B57;--btn-text:#FFFFFF;--marker:#FFDF85">
+                  <div class="bar"><div class="word"><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB627"/><path d="M3 22.5h26" stroke="#1E2A24" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#1E2A24" stroke-width="2.6" stroke-linecap="round"/></g></svg>Sunnyside</div><span class="btn">Start a project</span></div>
+                  <div class="stage">
+                      <div class="marks"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0z" fill="#FFB627"/><path d="M2.5 20h27M9 25h14" stroke="#1E2A24" stroke-width="3" stroke-linecap="round"/><path d="M16 3.5v3M6.8 7.3l2 2M25.2 7.3l-2 2" stroke="#1E2A24" stroke-width="2.6" stroke-linecap="round"/></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB627"/><path d="M3 22.5h26" stroke="#1E2A24" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#1E2A24" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#FFB627"/><path d="M2.5 20.5h27" stroke="#1E2A24" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#FFB627" stroke-width="2.6" stroke-linecap="round"/></svg></span></div>
+                      <div>
+                          <p class="lnk"><u>Prototype to product</u> &mdash; ready for real users and payments</p>
+                          <p class="h">Your idea or your business, built and kept running by one person you can call.</p>
+                          <div class="letter">With me, <mark>you work directly with the person doing the work.</mark> <span class="soft">Founder, Sunnyside</span></div>
+                      </div>
+                  </div>
+              </div>
+              <ul class="contrast"><li>ink on stage <b>12.2</b></li><li>ink on paper <b>14.6</b></li><li>soft text on paper <b>6.1</b></li><li>links on stage <b>5.2</b></li><li>links on paper <b>6.2</b></li><li>button text <b>6.3</b></li></ul>
+          </section>
+        <section class="pal">
+              <h2><a href="palette-butter.html">Butter</a></h2>
+              <p class="links"><a href="palette-butter.html">Full page</a> &middot; <a href="https://coolors.co/ffedb0-fffdf5-241c15-241c15-ffb000-ffd34d">Open in Coolors</a></p>
+              <div class="chips"><div class="chip"><div class="sw" style="background:#FFEDB0"></div><strong>Stage</strong><span>#FFEDB0</span><small>hero and letter background</small></div><div class="chip"><div class="sw" style="background:#FFFDF5"></div><strong>Paper</strong><span>#FFFDF5</span><small>page and letter</small></div><div class="chip"><div class="sw" style="background:#241C15"></div><strong>Ink</strong><span>#241C15</span><small>text and mark</small></div><div class="chip"><div class="sw" style="background:#6A5D4D"></div><strong>Soft ink</strong><span>#6A5D4D</span><small>secondary text</small></div><div class="chip"><div class="sw" style="background:#241C15"></div><strong>Accent</strong><span>#241C15</span><small>links and buttons</small></div><div class="chip"><div class="sw" style="background:#FFB000"></div><strong>Sun</strong><span>#FFB000</span><small>the mark</small></div><div class="chip"><div class="sw" style="background:#FFD34D"></div><strong>Marker</strong><span>#FFD34D</span><small>highlight</small></div></div>
+              <div class="preview" style="--stage:#FFEDB0;--paper:#FFFDF5;--ink:#241C15;--soft:#6A5D4D;--accent:#241C15;--btn:#241C15;--btn-text:#FFFFFF;--marker:#FFD34D">
+                  <div class="bar"><div class="word"><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB000"/><path d="M3 22.5h26" stroke="#241C15" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#241C15" stroke-width="2.6" stroke-linecap="round"/></g></svg>Sunnyside</div><span class="btn">Start a project</span></div>
+                  <div class="stage">
+                      <div class="marks"><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 20a10 10 0 0 1 20 0z" fill="#FFB000"/><path d="M2.5 20h27M9 25h14" stroke="#241C15" stroke-width="3" stroke-linecap="round"/><path d="M16 3.5v3M6.8 7.3l2 2M25.2 7.3l-2 2" stroke="#241C15" stroke-width="2.6" stroke-linecap="round"/></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><g transform="translate(0 2.5)"><path d="M7 19a9 9 0 0 1 18 0z" fill="#FFB000"/><path d="M3 22.5h26" stroke="#241C15" stroke-width="3" stroke-linecap="round"/><path d="M16 4.5v3M5.75 8.75l2.12 2.12M26.25 8.75l-2.12 2.12" stroke="#241C15" stroke-width="2.6" stroke-linecap="round"/></g></svg></span><span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#FFB000"/><path d="M2.5 20.5h27" stroke="#241C15" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#FFB000" stroke-width="2.6" stroke-linecap="round"/></svg></span></div>
+                      <div>
+                          <p class="lnk"><u>Prototype to product</u> &mdash; ready for real users and payments</p>
+                          <p class="h">Your idea or your business, built and kept running by one person you can call.</p>
+                          <div class="letter">With me, <mark>you work directly with the person doing the work.</mark> <span class="soft">Founder, Sunnyside</span></div>
+                      </div>
+                  </div>
+              </div>
+              <ul class="contrast"><li>ink on stage <b>14.4</b></li><li>ink on paper <b>16.5</b></li><li>soft text on paper <b>6.3</b></li><li>links on stage <b>14.4</b></li><li>links on paper <b>16.5</b></li><li>button text <b>16.8</b></li></ul>
+          </section>
+      </main>
+      <script src="switcher.js"></script>
+  </body>
+  </html>
+  

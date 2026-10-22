@@ -1,0 +1,48 @@
+// Mockup-only: sample projects for the work layouts. Real projects come later.
+window.WORK = [
+    {
+        offer: 'Prototype to product',
+        title: 'Class booking for a fitness studio',
+        who: 'A two-location studio whose owner built the first version in a no-code tool.',
+        problem: 'Double bookings, payments that sometimes didn’t go through, and members emailing to ask if they were signed up.',
+        built: 'Rebuilt booking and payments on a proper backend, kept the screens members already knew, and moved every existing account over.',
+        result: 'Members book and pay in one step. The front desk stopped fielding booking emails.',
+        hue: 205,
+    },
+    {
+        offer: 'Rescue',
+        title: 'Inventory app left half-finished',
+        who: 'A parts distributor whose previous developer stopped answering partway through.',
+        problem: 'Months of work, no documentation, and nobody sure which parts worked.',
+        built: 'Read through the code, kept what was solid, finished the rest, and wrote down how all of it fits together.',
+        result: 'Live in the warehouse within the quarter, with a handbook the owner can give the next person.',
+        hue: 28,
+    },
+    {
+        offer: 'Automation',
+        title: 'Order intake from email to the books',
+        who: 'A wholesale bakery taking orders by email, phone and text.',
+        problem: 'Someone spent every morning retyping orders into the accounting system.',
+        built: 'A small service that reads incoming orders, drafts them in the accounting system, and flags anything unclear for a person to check.',
+        result: 'Morning order entry went from about two hours to fifteen minutes of review.',
+        hue: 140,
+    },
+    {
+        offer: 'Custom tools',
+        title: 'Job scheduling for a field crew',
+        who: 'A home services company running twelve technicians off a whiteboard.',
+        problem: 'Off-the-shelf scheduling software didn’t handle their mix of quotes, repeat visits and parts orders.',
+        built: 'A simple internal app for the office and a phone view for techs, connected to their existing invoicing.',
+        result: 'The whiteboard is gone, and techs see tomorrow’s route the night before.',
+        hue: 265,
+    },
+    {
+        offer: 'Data and dashboards',
+        title: 'Weekly numbers without the spreadsheet',
+        who: 'A nonprofit reporting to a board and three funders.',
+        problem: 'Each report meant pulling exports from four systems and a day of copying into Excel.',
+        built: 'A dashboard that pulls from each system every night, with the board and funder views ready to share.',
+        result: 'Reports take minutes, and staff can answer funder questions on the spot.',
+        hue: 345,
+    },
+];

@@ -138,16 +138,22 @@
         .contact > * { max-width: 34rem; }
         .contact form { display: grid; gap: 14px; margin-top: 1.2em; }
         .contact label { display: grid; gap: 6px; font-weight: 600; font-size: .9em; }
-        .contact input, .contact textarea { font: inherit; color: var(--ink); padding: .6em .7em; border: 2px solid var(--ink); border-radius: 3px; background: var(--paper); }
+        .contact input, .contact textarea, .contact select { font: inherit; color: var(--ink); padding: .6em .7em; border: 2px solid var(--ink); border-radius: 3px; background: var(--paper); }
         .contact textarea { min-height: 7em; resize: vertical; }
         .contact .button { justify-self: start; }
+        .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+        .offers { margin: 0; max-width: 34em; }
+        .offers div { padding: .7em 0; border-top: 1px solid rgba(28, 43, 58, .18); }
+        .offers dt { font-weight: 800; }
+        .offers dd { margin: .2em 0 0; color: var(--ink-soft); }
 
         footer { max-width: 1120px; margin: 0 auto; padding: 72px clamp(16px, 4vw, 56px) 32px; color: var(--ink-soft); font-size: .85em; }
 
         @media (max-width: 760px) {
             .hero { grid-template-columns: 1fr; }
             .snapshot { max-width: 300px; }
-            .work { grid-template-columns: 1fr; }
+            .work, .pair { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -165,25 +171,28 @@
             </figure>
             <div>
                 <ul class="links">
-                    <li><a href="#work">Recent work</a> <span>&mdash; apps I&rsquo;ve shipped</span></li>
-                    <li><a href="#services">New apps</a> <span>&mdash; from idea to App Store</span></li>
-                    <li><a href="#services">Existing apps</a> <span>&mdash; fixes, features, rewrites</span></li>
+                    <li><a href="#services">Prototype to product</a> <span>&mdash; ready for real users and payments</span></li>
+                    <li><a href="#services">Rescue</a> <span>&mdash; stalled or abandoned projects</span></li>
+                    <li><a href="#services">After launch</a> <span>&mdash; fixes, features, hosting</span></li>
+                    <li><a href="#work">Recent work</a> <span>&mdash; things I&rsquo;ve shipped</span></li>
                     <li><a href="#process">How it goes</a> <span>&mdash; four steps, no surprises</span></li>
                     <li><a href="#letter">A note from me</a> <span>&mdash; why I work this way</span></li>
                 </ul>
-                <a class="button" href="#contact">Tell me about your app</a>
-                <h1>Mobile apps, designed and built by one person you can call.</h1>
-                <p class="sub">Sunnyside is Grant Bellar&rsquo;s app studio in Wichita, Kansas.</p>
+                <a class="button" href="#contact">Show me what you&rsquo;ve built</a>
+                <h1>Your idea, built and kept running by one person you can call.</h1>
+                <p class="sub">You built a prototype that proves the idea. I&rsquo;m Grant Bellar, a software engineer in Wichita, Kansas, and I turn it into a product people can sign up for, pay for, and rely on.</p>
             </div>
         </div>
 
         <div class="sheets" id="letter">
             <div class="letter">
-                <p>Hey there&mdash;</p>
-                <p>I&rsquo;m Grant. I run Sunnyside, and I&rsquo;m the person who will design, build, and ship your app.</p>
-                <p>Most studios sell you a team and then hand your project to whoever is free. <mark>Here you get me, from the first call to the App Store.</mark> That keeps things fast, and it means the person you explain your business to is the person writing the code.</p>
-                <p id="services">I take on new apps that start from an idea, and existing apps that need fixes, features, or a rewrite. After launch I keep them updated.</p>
-                <p>If that sounds like what you need, send me a note. I read and answer every one.</p>
+                <p>Hi,</p>
+                <p>I&rsquo;m Grant. I work with founders and small business owners who have built a first version of their idea themselves, with an AI tool, a no-code builder, or a lot of late nights, and have hit the wall.</p>
+                <p>You probably know the signs. It demos well, but it breaks when real people use it. Every fix creates a new problem. Payments, logins, or customer data feel risky to touch. You&rsquo;re spending more time keeping it alive than growing the business.</p>
+                <p>That&rsquo;s normal, and it&rsquo;s the point where most people go looking for help. An agency will take months and put a project manager between you and the code. A freelancer from a marketplace is quick to hire, but you can&rsquo;t tell if they&rsquo;re any good until it&rsquo;s too late.</p>
+                <p><mark>With me, you work directly with the person doing the work.</mark> I&rsquo;ll go through what you have, tell you honestly what&rsquo;s worth keeping, and give you a plan and a price before we start. Then I rebuild what needs rebuilding, launch it, and stay on to keep it running as you grow.</p>
+                <p>You own everything, including the code, the accounts and the domain. I write things down and explain decisions in plain English, so you&rsquo;re never stuck depending on me.</p>
+                <p>If that sounds like where you are, send me a link to what you&rsquo;ve built. I read and answer every message.</p>
                 <div class="signoff">
                     <img src="face.svg" alt="">
                     <div>
@@ -194,6 +203,15 @@
             </div>
         </div>
     </div>
+
+    <section class="block" id="services">
+        <h2>What I take on</h2>
+        <dl class="offers">
+            <div><dt>Prototype to product</dt><dd>Your prototype proves the idea. I make it handle real users, real data, and payments.</dd></div>
+            <div><dt>Rescue</dt><dd>A previous developer left, or the project stalled halfway. I&rsquo;ll read what&rsquo;s there, tell you what&rsquo;s salvageable, and finish it.</dd></div>
+            <div><dt>After launch</dt><dd>Fixes, new features, hosting and backups, handled every month so you don&rsquo;t need to hire.</dd></div>
+        </dl>
+    </section>
 
     <section class="block" id="work">
         <h2>Recent work</h2>
@@ -207,19 +225,24 @@
     <section class="block" id="process">
         <h2>How it goes</h2>
         <ol class="steps">
-            <li><span><strong>Talk.</strong> You tell me what you need.</span></li>
-            <li><span><strong>Scope.</strong> I send a plan and a price.</span></li>
-            <li><span><strong>Build.</strong> You see progress every week.</span></li>
-            <li><span><strong>Launch.</strong> It goes live and I stick around.</span></li>
+            <li><span><strong>Look.</strong> You send me what you have. I go through it and we talk.</span></li>
+            <li><span><strong>Plan.</strong> A written plan and a fixed price before anything starts.</span></li>
+            <li><span><strong>Build.</strong> You see working progress every week.</span></li>
+            <li><span><strong>Launch.</strong> It goes live, and I stay on as it grows.</span></li>
         </ol>
     </section>
 
     <section class="block contact" id="contact">
-        <h2>Tell me about your app</h2>
-        <p>I answer every message myself, usually within a day.</p>
+        <h2>Show me what you&rsquo;ve built</h2>
+        <p>A link, a screen recording, or a description is enough. I reply within a day.</p>
         <form>
             <label>Your email <input type="email" name="email" required></label>
-            <label>What are you building? <textarea name="message" required></textarea></label>
+            <label>Link to your prototype <input type="url" name="link" placeholder="Optional"></label>
+            <div class="pair">
+                <label>Where is it now? <select name="stage"><option>A prototype only I use</option><option>Testing with a few users</option><option>Live with paying customers</option></select></label>
+                <label>Budget <select name="budget"><option>Under $10k</option><option>$10k to $25k</option><option>$25k to $50k</option><option>$50k+</option></select></label>
+            </div>
+            <label>What&rsquo;s going wrong, and what do you need it to do? <textarea name="message" required></textarea></label>
             <button class="button" type="submit">Send message</button>
         </form>
     </section>

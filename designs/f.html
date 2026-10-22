@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F. Plain | Sunnyside</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* B's structure in black and white with one monospace face: a large photo beside a link list,
+           then a letter, then short lists. Night swaps the two colors and nothing else. */
+        :root {
+            --bg: #fff;
+            --fg: #000;
+            --soft: rgba(0, 0, 0, .6);
+            --line: rgba(0, 0, 0, .2);
+            --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+            --pad: clamp(18px, 4vw, 56px);
+        }
+        :root[data-theme="dark"] { --bg: #000; --fg: #fff; --soft: rgba(255, 255, 255, .6); --line: rgba(255, 255, 255, .25); }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font: 400 16px/1.65 var(--mono);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+        a:hover { text-decoration-thickness: 2px; }
+        :focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+
+        .button {
+            display: inline-block;
+            font: 600 15px/1 var(--mono);
+            text-decoration: none;
+            color: var(--bg); background: var(--fg);
+            border: 1px solid var(--fg); border-radius: 0;
+            padding: .8em 1.1em;
+            cursor: pointer;
+        }
+        .button:hover { color: var(--fg); background: var(--bg); }
+
+        .top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px var(--pad); }
+        .wordmark { font-weight: 600; text-decoration: none; }
+        .theme-toggle { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
+
+        /* The photo is the first thing you see, and the biggest thing on the page. */
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+            gap: clamp(28px, 5vw, 72px);
+            align-items: end;
+            max-width: 1180px;
+            margin: clamp(12px, 3vw, 40px) auto 0;
+            padding: 0 var(--pad);
+        }
+        .photo { margin: 0; }
+        .photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.15); }
+        .photo figcaption { margin-top: 10px; color: var(--soft); font-size: 14px; }
+
+        .links { list-style: none; margin: 0 0 1.8em; padding: 0; line-height: 1.9; }
+        .links span { color: var(--soft); }
+        h1 { margin: 0 0 .6em; font-size: clamp(1.5rem, 1rem + 1.6vw, 2.3rem); font-weight: 600; line-height: 1.15; letter-spacing: -.02em; }
+        .sub { margin: 0 0 1.6em; color: var(--soft); }
+
+        .letter { max-width: 40em; margin: clamp(80px, 11vw, 144px) auto 0; padding: 0 var(--pad); }
+        .letter p { margin: 0 0 1.2em; }
+        .signoff { display: flex; align-items: center; gap: 16px; margin-top: 2.2em; }
+        .signoff img { width: 56px; height: 56px; object-fit: cover; filter: grayscale(1) contrast(1.15); }
+        .signoff strong { display: block; font-weight: 600; }
+        .signoff span { color: var(--soft); font-size: 14px; }
+
+        .block { max-width: 40em; margin: clamp(72px, 9vw, 112px) auto 0; padding: 0 var(--pad); }
+        h2 { margin: 0 0 .8em; font-size: 1em; font-weight: 600; }
+        .rows { list-style: none; margin: 0; padding: 0; }
+        .rows li { padding: .8em 0; border-top: 1px solid var(--line); }
+        .rows li:last-child { border-bottom: 1px solid var(--line); }
+        .rows strong { font-weight: 600; }
+        .rows span { color: var(--soft); }
+        ol.rows { counter-reset: step; }
+        ol.rows li { counter-increment: step; display: grid; grid-template-columns: 2.5ch 1fr; }
+        ol.rows li::before { content: counter(step); color: var(--soft); }
+
+        .contact > p { margin: 0 0 1.4em; color: var(--soft); }
+        form { display: grid; gap: 16px; }
+        label { display: grid; gap: 6px; font-size: 14px; }
+        input, select, textarea { font: 400 16px/1.4 var(--mono); color: inherit; background: var(--bg); border: 1px solid var(--fg); border-radius: 0; padding: .6em .7em; width: 100%; }
+        textarea { min-height: 7em; resize: vertical; }
+        input:focus-visible, select:focus-visible, textarea:focus-visible { outline-offset: 0; }
+        .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(-45deg, transparent 50%, currentColor 50%); background-position: right 1.2em center, right .85em center; background-size: .35em .35em; background-repeat: no-repeat; padding-right: 2.2em; }
+        form .button { justify-self: start; }
+
+        footer { max-width: 40em; margin: clamp(72px, 9vw, 112px) auto 0; padding: 0 var(--pad) 40px; color: var(--soft); font-size: 14px; }
+
+        @media (max-width: 760px) {
+            .hero { grid-template-columns: 1fr; }
+            .pair { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+    <script src="theme.js"></script>
+</head>
+<body>
+    <header class="top">
+        <a class="wordmark" href="#top">Sunnyside</a>
+        <button class="theme-toggle" type="button" id="theme-toggle">feeling sleepy?</button>
+    </header>
+
+    <section class="hero" id="top">
+        <figure class="photo">
+            <img src="face.svg" alt="Grant Bellar">
+            <figcaption>Grant Bellar, Wichita, Kansas</figcaption>
+        </figure>
+        <div>
+            <ul class="links">
+                <li><a href="#services">Prototype to product</a> <span>&mdash; ready for real users</span></li>
+                <li><a href="#services">Rescue</a> <span>&mdash; stalled projects</span></li>
+                <li><a href="#services">After launch</a> <span>&mdash; fixes, features, hosting</span></li>
+                <li><a href="#work">Recent work</a> <span>&mdash; things I&rsquo;ve shipped</span></li>
+                <li><a href="#process">How it goes</a> <span>&mdash; four steps</span></li>
+                <li><a href="#letter">A note from me</a> <span>&mdash; why I work this way</span></li>
+            </ul>
+            <h1>Your idea, built and kept running by one person you can call.</h1>
+            <p class="sub">You built a prototype that proves the idea. I&rsquo;m Grant Bellar, a software engineer in Wichita, Kansas, and I turn it into a product people can sign up for, pay for, and rely on.</p>
+            <a class="button" href="#contact">Show me what you&rsquo;ve built</a>
+        </div>
+    </section>
+
+    <section class="letter" id="letter">
+        <p>Hi,</p>
+        <p>I&rsquo;m Grant. I work with founders and small business owners who have built a first version of their idea themselves, with an AI tool, a no-code builder, or a lot of late nights, and have hit the wall.</p>
+        <p>You probably know the signs. It demos well, but it breaks when real people use it. Every fix creates a new problem. Payments, logins, or customer data feel risky to touch. You&rsquo;re spending more time keeping it alive than growing the business.</p>
+        <p>That&rsquo;s normal, and it&rsquo;s the point where most people go looking for help. An agency will take months and put a project manager between you and the code. A freelancer from a marketplace is quick to hire, but you can&rsquo;t tell if they&rsquo;re any good until it&rsquo;s too late.</p>
+        <p><strong>With me, you work directly with the person doing the work.</strong> I&rsquo;ll go through what you have, tell you honestly what&rsquo;s worth keeping, and give you a plan and a price before we start. Then I rebuild what needs rebuilding, launch it, and stay on to keep it running as you grow.</p>
+        <p>You own everything, including the code, the accounts and the domain. I write things down and explain decisions in plain English, so you&rsquo;re never stuck depending on me.</p>
+        <p>If that sounds like where you are, send me a link to what you&rsquo;ve built. I read and answer every message.</p>
+        <div class="signoff">
+            <img src="face.svg" alt="">
+            <div>
+                <strong>Grant Bellar</strong>
+                <span>Founder, Sunnyside</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="block" id="services">
+        <h2>What I take on</h2>
+        <ul class="rows">
+            <li><strong>Prototype to product.</strong> <span>Your prototype proves the idea. I make it handle real users, real data, and payments.</span></li>
+            <li><strong>Rescue.</strong> <span>A previous developer left, or the project stalled halfway. I&rsquo;ll read what&rsquo;s there, tell you what&rsquo;s salvageable, and finish it.</span></li>
+            <li><strong>After launch.</strong> <span>Fixes, new features, hosting and backups, handled every month so you don&rsquo;t need to hire.</span></li>
+        </ul>
+    </section>
+
+    <section class="block" id="work">
+        <h2>Recent work</h2>
+        <ul class="rows">
+            <li><strong><a href="#">Project one</a>.</strong> <span>A short line about what it does and who it&rsquo;s for.</span></li>
+            <li><strong><a href="#">Project two</a>.</strong> <span>A short line about what it does and who it&rsquo;s for.</span></li>
+            <li><strong><a href="#">Project three</a>.</strong> <span>A short line about what it does and who it&rsquo;s for.</span></li>
+        </ul>
+    </section>
+
+    <section class="block" id="process">
+        <h2>How it goes</h2>
+        <ol class="rows">
+            <li><div><strong>Look.</strong> <span>You send me what you have. I go through it and we talk.</span></div></li>
+            <li><div><strong>Plan.</strong> <span>A written plan and a fixed price before anything starts.</span></div></li>
+            <li><div><strong>Build.</strong> <span>You see working progress every week.</span></div></li>
+            <li><div><strong>Launch.</strong> <span>It goes live, and I stay on as it grows.</span></div></li>
+        </ol>
+    </section>
+
+    <section class="block contact" id="contact">
+        <h2>Show me what you&rsquo;ve built</h2>
+        <p>A link, a screen recording, or a description is enough. I reply within a day.</p>
+        <form>
+            <label>Your email <input type="email" name="email" required></label>
+            <label>Link to your prototype (optional) <input type="url" name="link"></label>
+            <div class="pair">
+                <label>Where is it now? <select name="stage"><option>A prototype only I use</option><option>Testing with a few users</option><option>Live with paying customers</option></select></label>
+                <label>Budget <select name="budget"><option>Under $10k</option><option>$10k to $25k</option><option>$25k to $50k</option><option>$50k+</option></select></label>
+            </div>
+            <label>What&rsquo;s going wrong, and what do you need it to do? <textarea name="message" required></textarea></label>
+            <button class="button" type="submit">Send message</button>
+        </form>
+    </section>
+
+    <footer>&copy; 2026 Sunnyside. Made in Wichita, Kansas.</footer>
+
+    <script src="switcher.js"></script>
+</body>
+</html>

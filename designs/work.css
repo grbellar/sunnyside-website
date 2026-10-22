@@ -1,0 +1,132 @@
+/* Mockup-only: shared styles for the work layouts. Builds on ../styles.css. */
+
+.work-band {
+    background: var(--sky);
+    margin: clamp(56px, 9vw, 112px) clamp(0px, 2.2vw, 28px) 0;
+    padding: clamp(40px, 6vw, 80px) clamp(16px, 4vw, 56px) clamp(48px, 7vw, 96px);
+    overflow: hidden;
+}
+.work-band > header { max-width: 1120px; margin: 0 auto clamp(28px, 4vw, 48px); }
+.work-band h2 { margin: 0 0 .3em; font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
+.work-band header p { margin: 0; max-width: 34em; }
+
+/* A project on paper */
+.sheet {
+    background: var(--paper);
+    box-shadow: 0 1px 3px rgba(28, 43, 58, .18), 0 14px 30px -18px rgba(28, 43, 58, .35);
+    padding: clamp(20px, 4vw, 40px);
+}
+.sheet .tag { display: inline-block; font-size: .72em; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); margin-bottom: .6em; }
+.sheet h3 { margin: 0 0 .25em; font-size: clamp(1.25rem, 1rem + 1vw, 1.7rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; }
+.sheet .who { margin: 0 0 1em; color: var(--ink-soft); }
+.sheet dl { margin: 0; }
+.sheet dl div { padding: .6em 0; border-top: 1px solid var(--rule); }
+.sheet dt { font-weight: 800; font-size: .85em; }
+.sheet dd { margin: .1em 0 0; }
+
+/* Screenshot taped to the sheet. Placeholder browser window until real images exist. */
+.shot {
+    position: relative;
+    margin: 0 0 1.2em;
+    aspect-ratio: 16 / 10;
+    background: hsl(var(--hue) 45% 92%);
+    border: 1px solid rgba(28, 43, 58, .12);
+    transform: rotate(-.6deg);
+}
+.shot::before, .shot::after {
+    content: "";
+    position: absolute; top: -10px;
+    width: 72px; height: 22px;
+    background: rgba(255, 228, 92, .55);
+    box-shadow: 0 1px 1px rgba(28, 43, 58, .08);
+}
+.shot::before { left: 10%; transform: rotate(-4deg); }
+.shot::after { right: 10%; transform: rotate(5deg); }
+.shot i {
+    position: absolute; inset: 12% 10% 0;
+    background: #fff;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 0 0 1px rgba(28, 43, 58, .1);
+    background-image:
+        radial-gradient(circle at 12px 10px, #E1E5EA 3px, transparent 4px),
+        radial-gradient(circle at 24px 10px, #E1E5EA 3px, transparent 4px),
+        radial-gradient(circle at 36px 10px, #E1E5EA 3px, transparent 4px),
+        linear-gradient(#F3F5F8 0 20px, transparent 20px),
+        linear-gradient(90deg, hsl(var(--hue) 60% 55%) 0 0);
+    background-size: auto, auto, auto, auto, 40% 10px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 8% 38px;
+    background-repeat: no-repeat;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.2em; }
+.chips button {
+    font: inherit; font-size: .8em; font-weight: 600;
+    color: var(--ink); background: var(--paper);
+    border: 2px solid var(--ink); border-radius: 999px;
+    padding: .3em .9em; cursor: pointer;
+}
+.chips button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+
+/* A. Stack */
+.stack-wrap { max-width: 980px; margin: 0 auto; }
+@media (min-width: 761px) {
+    .stack .sheet { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: clamp(24px, 3vw, 40px); align-content: start; }
+    .stack .sheet .shot { grid-row: 1 / span 4; margin: 10px 0 0; }
+}
+.stack { display: grid; touch-action: pan-y; outline: none; }
+.stack .sheet {
+    grid-area: 1 / 1;
+    transition: transform .35s cubic-bezier(.2, .7, .2, 1), opacity .35s;
+    user-select: none;
+}
+.stack .sheet.is-top { cursor: grab; }
+.stack .sheet.dragging { transition: none; cursor: grabbing; }
+.stack-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: clamp(28px, 4vw, 40px); }
+.stack-controls button {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 2px solid var(--ink); background: var(--paper); color: var(--ink);
+    font: inherit; font-size: 1.1em; cursor: pointer;
+}
+.stack-controls button:hover { background: var(--ink); color: #fff; }
+.stack-count { min-width: 4.5em; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stack-hint { text-align: center; color: var(--ink-soft); font-size: .8em; margin: .6em 0 0; }
+
+/* B. Desk */
+.desk {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 40px);
+    max-width: 1120px; margin: 0 auto;
+    align-items: start;
+}
+.desk .sheet { padding: 18px 18px 22px; transition: transform .25s, box-shadow .25s; }
+.desk .sheet:nth-child(3n + 1) { transform: rotate(-1.6deg); }
+.desk .sheet:nth-child(3n + 2) { transform: rotate(1.1deg) translateY(14px); }
+.desk .sheet:nth-child(3n) { transform: rotate(-.5deg) translateY(-6px); }
+.desk .sheet:hover, .desk .sheet:focus-within { transform: rotate(0) translateY(-4px); box-shadow: 0 1px 3px rgba(28, 43, 58, .18), 0 24px 40px -20px rgba(28, 43, 58, .45); }
+.desk .sheet h3 { font-size: 1.15em; }
+.desk .sheet .who { font-size: .9em; margin-bottom: .8em; }
+.desk .sheet dl { display: none; }
+.desk .more { font: inherit; font-weight: 600; color: var(--blue); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .16em; }
+
+.desk-dialog { border: 0; padding: 0; background: none; max-width: min(640px, calc(100vw - 32px)); width: 100%; }
+.desk-dialog::backdrop { background: rgba(28, 43, 58, .45); }
+.desk-dialog .sheet { transform: rotate(-.8deg); max-height: calc(100vh - 64px); overflow: auto; }
+.desk-dialog .close { float: right; font: inherit; font-size: .85em; font-weight: 600; background: none; border: 2px solid var(--ink); border-radius: 999px; padding: .2em .8em; cursor: pointer; }
+
+@media (max-width: 760px) {
+    /* On phones the desk becomes a row you swipe through. */
+    .desk {
+        grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 82%;
+        overflow-x: auto; scroll-snap-type: x mandatory;
+        margin: 0 calc(-1 * clamp(16px, 4vw, 56px)); padding: 12px clamp(16px, 4vw, 56px) 28px;
+        scrollbar-width: none;
+    }
+    .desk .sheet { scroll-snap-align: center; }
+    .desk .sheet:nth-child(3n + 2) { transform: rotate(1.1deg); }
+    .desk .sheet:nth-child(3n) { transform: rotate(-.5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stack .sheet, .desk .sheet { transition: none; }
+}
