@@ -7,6 +7,7 @@
     --blue-dark: #1846B0;
     --marker: #FFE27A;
     --rule: rgba(23, 42, 69, .18);
+    --trouble: #C2412D;
 }
 
 * { box-sizing: border-box; }
@@ -50,12 +51,7 @@ a:hover { text-decoration-thickness: .14em; }
     font-size: .82em;
 }
 .mark { display: inline-flex; align-items: center; gap: .5em; color: var(--ink); font-weight: 800; font-size: 1.25em; text-decoration: none; }
-.mark::before {
-    content: "";
-    width: 1.3em; height: 1.3em; border-radius: 50%;
-    background: radial-gradient(circle, #FFC21A 0 38%, #fff 40% 100%);
-    box-shadow: 0 0 0 2px var(--ink);
-}
+.mark svg { width: 1.3em; height: 1.3em; flex: none; }
 
 .stage {
     background: var(--sky);
@@ -201,6 +197,20 @@ footer { max-width: 1120px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 56px)
 .shot .ink { fill: var(--ink); }
 .shot .hl { fill: var(--marker); stroke: none; }
 .shot .t { fill: var(--ink); stroke: none; font: 800 17px 'Hanken Grotesk', sans-serif; }
+.shot .t.small { font-size: 12px; font-weight: 700; }
+.shot .t.big { font-size: 26px; }
+.shot .lbl { stroke: none; font: 13px 'Homemade Apple', cursive; }
+.shot .bad { stroke: var(--trouble); }
+.shot .badfill { fill: var(--trouble); stroke: none; }
+.shot .badfill.soft { opacity: .22; }
+.shot .badtext { fill: var(--trouble); }
+.shot .oktext { fill: var(--blue); }
+.shot .okline { stroke: var(--blue); }
+.shot .okfill { fill: var(--blue); stroke: none; }
+.shot .tick { stroke: #fff; stroke-width: 2.4; }
+.shot .heavy { stroke-width: 2.8; }
+.shot .dashed { stroke-dasharray: 4 3; }
+.shot .dash { stroke-dasharray: 3 5; opacity: .35; }
 
 /* Desk: every sheet laid out at once. Also the layout without JavaScript. */
 .work-list[data-layout="desk"] {
@@ -274,3 +284,7 @@ footer { max-width: 1120px; margin: 0 auto; padding: 32px clamp(16px, 4vw, 56px)
 @media (prefers-reduced-motion: reduce) {
     [data-layout] .sheet { transition: none; }
 }
+
+/* Headlines and wordmark in Schibsted Grotesk; body stays Hanken Grotesk. */
+.hero h1, .block h2, .reply h2, .work-band h2, .sheet h3, .mark { font-family: 'Schibsted Grotesk', sans-serif; }
+.hero h1, .block h2, .reply h2, .work-band h2 { font-weight: 800; letter-spacing: -0.04em; }

@@ -22,13 +22,14 @@ The look comes from design B in `designs/b.html`:
 - One pale blue `--sky` stage holds the whole page like a desk, and every piece of content sits on it as paper: the photo snapshot, the letter, the project sheets, and the contact form as a reply sheet. Only the header and footer sit outside it.
 - Rotated photo snapshot with a handwritten caption
 - Letter on stacked paper sheets with a yellow marker highlight and a signature
-- Hanken Grotesk for text, Homemade Apple for handwriting (Google Fonts)
+- Schibsted Grotesk for headlines, sheet titles and the wordmark; Hanken Grotesk for body text; Homemade Apple for handwriting (Google Fonts)
+- Logo is the G2c "Reflection" mark: a half sun over a horizon line with a yellow reflection, inline SVG in the header `.mark` and in `favicon.svg`
 - One breakpoint at 760px where the hero stacks
 - No dark mode
 
 ## Work Section
 
-Each project is an `article.sheet` inside `.work-list` in `index.html`, with `data-offer` (used for the stack's filter chips), a `.shot` screenshot, tag, title, the problem as a one-line summary, and a what I built / what changed list. Clients and companies are never named or described; the problem and solution carry each sheet. Each sheet has an inline SVG illustration: ink lines on a dotted grid with one marker-yellow highlight (classes thin, bold, paper, ink, hl, t).
+Each project is an `article.sheet` inside `.work-list` in `index.html`, with `data-offer` (used for the stack's filter chips), a `.shot` screenshot, tag, title, the problem as a one-line summary, and a what I built / what changed list. Clients and companies are never named or described; the problem and solution carry each sheet. Each sheet has an inline SVG illustration split into before (left) and after (right) with handwritten labels. The problem is drawn in `--trouble` red (tangles, blanks, question marks, crossed-out pieces); the solution gets one marker-yellow highlight and a blue check badge. Styles are the `.shot` classes in `styles.css`.
 
 Two layouts read the same markup:
 - Desk (default): sheets laid out in a grid, "Read the whole story" opens a dialog. A horizontal swipe row on phones. Also the layout without JavaScript.
@@ -52,4 +53,4 @@ python3 -m http.server 8000
 
 ## Design Mockups
 
-`designs/` holds the rebrand exploration: variations A through F, B1 through B10, and G1 through G6 (the live site with new fonts and logo marks, plus `logos.html` comparing the marks), G2a through G5c (refinements of G2, G3 and G5, with `marks.html` showing each mark beside its fonts), and `palette-*.html` (G2a in seven palettes, compared in `palettes.html`, and round eight in `palettes2.html`, with reasoning in `palettes.md`), an index page, and `switcher.js` for moving between them. `designs/legacy/` is the previous sun/moon themed site. `designs/copy.md` has copy drafts. These are reference only and are not part of the live site.
+`designs/` holds the rebrand exploration: variations A through F, B1 through B10, and G1 through G6 (the live site with new fonts and logo marks, plus `logos.html` comparing the marks), G2a through G5c (refinements of G2, G3 and G5, with `marks.html` showing each mark beside its fonts), and `palette-*.html` (G2a in seven palettes, compared in `palettes.html`, and round eight in `palettes2.html`, with reasoning in `palettes.md`), and `fonts.html` (a font tester for the G2 marks in Bluebird), an index page, and `switcher.js` for moving between them. `designs/legacy/` is the previous sun/moon themed site. `designs/copy.md` has copy drafts. These are reference only and are not part of the live site.
