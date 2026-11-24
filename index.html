@@ -3,155 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunnyside | Custom software for founders and small businesses in Wichita, Kansas</title>
-    <meta name="description" content="Grant Bellar turns founders' prototypes into real products, and builds automations, internal tools, and dashboards for small businesses. Based in Wichita, Kansas.">
-    <meta property="og:title" content="Sunnyside">
-    <meta property="og:description" content="Your idea or your business, built and kept running by one person you can call.">
+    <title>Sunnyside | Software on subscription, from Wichita, Kansas</title>
+    <meta name="description" content="Sunnyside is a software studio on a flat monthly rate. Send requests one at a time, get working web software back in days, pause whenever you like.">
+    <meta property="og:title" content="Sunnyside | Ask for it. Watch it ship.">
+    <meta property="og:description" content="A software studio on a flat monthly rate. Send requests one at a time, get working software back in days, pause whenever you like.">
     <meta property="og:image" content="images/grant.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;800&family=Hanken+Grotesk:wght@400;600;800&family=Homemade+Apple&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="top">
-        <a class="mark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 17a10 10 0 0 1 20 0z" fill="#FFC21A"/><path d="M2.5 20.5h27" stroke="#172A45" stroke-width="3" stroke-linecap="round"/><path d="M8.5 25h15M12 29h8" stroke="#FFC21A" stroke-width="2.6" stroke-linecap="round"/></svg>Sunnyside Solutions</a>
-        <a class="button" href="#contact">Start a project</a>
+    <header class="top" id="top">
+        <div class="wrap top-row">
+            <a class="mark" href="#top" aria-label="Sunnyside home">
+                <svg width="26" height="15" viewBox="0 0 26 15" aria-hidden="true"><path d="M0 13a13 13 0 0 1 26 0Z" fill="#FF4F00"/><rect x="0" y="13" width="26" height="2" fill="currentColor"/></svg>
+                <span>sunnyside</span>
+            </a>
+            <nav class="top-nav" aria-label="Sections">
+                <a href="#work">Work</a>
+                <a href="#how">How it works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a class="btn btn-ink btn-sm" href="#contact">Start a project</a>
+        </div>
     </header>
 
     <main>
-        <div class="stage" id="top">
-            <div class="hero">
-                <figure class="snapshot">
-                    <img src="images/grant.jpg" width="1000" height="1250" alt="Grant Bellar smiling in an orange cap and rain jacket">
-                    <figcaption>Grant, Wichita KS</figcaption>
-                </figure>
+        <section class="hero wrap">
+            <div class="hero-copy">
+                <p class="eyebrow">Software on subscription</p>
+                <h1>Ask for it.<br>Watch it <span class="sun">ship.</span></h1>
+                <p class="lede">A software studio on a flat monthly rate. Send requests one at a time, get working software back in days, pause whenever you like.</p>
+                <div class="actions">
+                    <a class="btn btn-ink" href="#pricing">See plans</a>
+                    <a class="btn btn-line" href="#work">See the work</a>
+                </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <svg class="hero-sun" viewBox="0 0 280 280"><circle cx="140" cy="140" r="140" fill="#FF4F00"/></svg>
+                <div class="queue">
+                    <div class="queue-head">
+                        <span class="strong">Requests</span>
+                        <span>Example queue</span>
+                    </div>
+                    <div class="queue-row first">
+                        <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="#FF4F00"/></svg>
+                        <span class="queue-name">Customer portal login</span>
+                        <span class="state">Shipped</span>
+                    </div>
+                    <div class="queue-row">
+                        <svg viewBox="0 0 16 16"><path d="M0 11a8 8 0 0 1 16 0Z" fill="#FF4F00"/><rect x="0" y="11" width="16" height="1.5" fill="#111"/></svg>
+                        <span class="queue-name">Invoice export to QuickBooks</span>
+                        <span class="state sun">Building</span>
+                    </div>
+                    <div class="queue-row muted">
+                        <svg viewBox="0 0 16 16"><rect x="0" y="11" width="16" height="1.5" fill="#999"/></svg>
+                        <span class="queue-name">Booking calendar for the sales team</span>
+                        <span class="state">Queued</span>
+                    </div>
+                    <div class="queue-foot">
+                        <span>One request at a time</span>
+                        <span>Flat rate · pause anytime</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="record" aria-labelledby="record-title">
+            <div class="wrap record-row">
+                <div class="record-lead">
+                    <p class="label" id="record-title">On the record</p>
+                    <p class="big-num">23,664</p>
+                    <p>records moved off seven no-code tools.<br>Every one checked.</p>
+                </div>
+                <dl class="record-stats">
+                    <div><dt>~5,000</dt><dd>practice questions people have paid for since Feb 2024</dd></div>
+                    <div><dt>10,676</dt><dd>files migrated and verified in the same move</dd></div>
+                    <div><dt>101 <small>/ 7,571</small></dt><dd>applicants flagged as likely fakes, no real hires among them</dd></div>
+                    <div><dt>2,013</dt><dd>questions parsed out of Word files, counts matched at every step</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="section wrap" id="how">
+            <div class="section-head split">
                 <div>
-                    <ul class="links">
-                        <li><a href="#work">Prototypes</a> <span>turned into products people pay for</span></li>
-                        <li><a href="#work">Rescues</a> <span>for projects that stalled</span></li>
-                        <li><a href="#work">Automation</a> <span>for work you now do by hand</span></li>
-                        <li><a href="#work">Custom tools</a> <span>built around how you already work</span></li>
+                    <p class="eyebrow">How it works</p>
+                    <h2>Every request rises<br>the same way.</h2>
+                </div>
+                <p class="body side">Three states, and you can always see which one you&rsquo;re in. No tickets, no standups, no estimates to argue over.</p>
+            </div>
+            <ol class="steps">
+                <li>
+                    <div class="step-art"></div>
+                    <p class="label">01 · Queued</p>
+                    <h3>Send a request</h3>
+                    <p class="body">Write what you need in plain language. A sentence is enough. Add as many as you like to the queue.</p>
+                </li>
+                <li>
+                    <div class="step-art"><svg width="112" height="56" viewBox="0 0 112 56" aria-hidden="true"><path d="M0 56a56 56 0 0 1 112 0Z" fill="#FF4F00"/></svg></div>
+                    <p class="label sun">02 · Building</p>
+                    <h3>We build it</h3>
+                    <p class="body">One request at a time, by a senior engineer. You see progress every day and can redirect at any point.</p>
+                </li>
+                <li>
+                    <div class="step-art risen"><svg width="112" height="112" viewBox="0 0 112 112" aria-hidden="true"><circle cx="56" cy="56" r="56" fill="#FF4F00"/></svg></div>
+                    <p class="label ink">03 · Shipped</p>
+                    <h3>It goes live</h3>
+                    <p class="body">Deployed, documented and yours. Then the next request in your queue starts.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section wrap" id="work">
+            <div class="section-head split">
+                <div>
+                    <p class="eyebrow">Things we&rsquo;ve built</p>
+                    <h2>Real work,<br>real numbers.</h2>
+                </div>
+                <p class="body side">Clients stay unnamed. The problem, what got built and what changed carry each one.</p>
+            </div>
+            <div class="work-grid">
+                <article class="case">
+                    <p class="label sun">Prototype</p>
+                    <h3>Board exam prep people pay for</h3>
+                    <p class="body">The practice questions were written, but there was no way to sell them or give people access.</p>
+                    <p class="readout"><strong>~5,000</strong><span>questions, sold through Stripe since Feb 2024</span></p>
+                    <details>
+                        <summary>The whole story</summary>
+                        <dl>
+                            <dt>What we built</dt><dd>Timed 100-question exams that predict your score, about 5,000 review questions, and checkout through Stripe.</dd>
+                            <dt>What changed</dt><dd>People have been paying for it since February 2024. It&rsquo;s on its third version now.</dd>
+                        </dl>
+                    </details>
+                </article>
+                <article class="case">
+                    <p class="label sun">Rescue</p>
+                    <h3>Off no-code, onto one system</h3>
+                    <p class="body">Seven separate tools shared one database, so every fix touched all of them.</p>
+                    <p class="readout"><strong>23,664</strong><span>records moved, plus 10,676 files, every one checked</span></p>
+                    <details>
+                        <summary>The whole story</summary>
+                        <dl>
+                            <dt>What we built</dt><dd>One app to replace all seven tools, owned by the team. We moved over one piece at a time and checked every record and file.</dd>
+                            <dt>What changed</dt><dd>All 23,664 records and 10,676 files made it across, and the old tools are shut off.</dd>
+                        </dl>
+                    </details>
+                </article>
+                <article class="case">
+                    <p class="label sun">Automation</p>
+                    <h3>Following up with applicants automatically</h3>
+                    <p class="body">Most applications were just an email and a resume, and recruiters chased every missing answer by hand.</p>
+                    <p class="readout"><strong>48h</strong><span>to undo any automatic decline</span></p>
+                    <details>
+                        <summary>The whole story</summary>
+                        <dl>
+                            <dt>What we built</dt><dd>Emails that ask applicants for whatever their application is missing. AI reads the replies. When someone clearly doesn&rsquo;t fit, the system declines them, and a recruiter has 48 hours to undo it.</dd>
+                            <dt>What changed</dt><dd>Recruiters spend their time on applicants who have already answered everything.</dd>
+                        </dl>
+                    </details>
+                </article>
+                <article class="case">
+                    <p class="label sun">Automation</p>
+                    <h3>Catching fake applicants</h3>
+                    <p class="body">Rings of fake applicants reused phones, emails and resumes, and recruiters lost hours to them.</p>
+                    <p class="readout"><strong>101</strong><span>of 7,571 applicants flagged high risk, no real hires among them</span></p>
+                    <details>
+                        <summary>The whole story</summary>
+                        <dl>
+                            <dt>What we built</dt><dd>A risk score built from signals a person can check, like a phone number, email or resume that shows up on other applications. It flags likely fakes before anyone gets on a call with them.</dd>
+                            <dt>What changed</dt><dd>It flagged 101 of 7,571 applicants as high risk. None of the people who were actually hired were flagged.</dd>
+                        </dl>
+                    </details>
+                </article>
+                <article class="case">
+                    <p class="label sun">Internal tool</p>
+                    <h3>Invoices built from live data</h3>
+                    <p class="body">Every month, someone built the invoices and vendor payments by hand in a spreadsheet.</p>
+                    <p class="readout"><strong>0</strong><span>records deleted in the switch, tested on production data first</span></p>
+                    <details>
+                        <summary>The whole story</summary>
+                        <dl>
+                            <dt>What we built</dt><dd>A billing system that calculates invoices from live data and locks in the exchange rate. When hours change, the invoice updates to match.</dd>
+                            <dt>What changed</dt><dd>It was tested against real production data before the switch. Nothing was deleted.</dd>
+                        </dl>
+                    </details>
+                </article>
+                <article class="case">
+                    <p class="label sun">Data</p>
+                    <h3>From Word documents to a question bank</h3>
+                    <p class="body">Questions, answers, explanations and sources lived in Word files with homemade formatting.</p>
+                    <p class="readout"><strong>2,013</strong><span>questions loaded, with the count matched at every step</span></p>
+                    <details>
+                        <summary>The whole story</summary>
+                        <dl>
+                            <dt>What we built</dt><dd>Parsers that read the homemade formatting and turn it into quizzes. They check the question count after every step.</dd>
+                            <dt>What changed</dt><dd>The first batches loaded 1,448 review questions and 565 exam questions, and every count matched.</dd>
+                        </dl>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <section class="section wrap" id="menu">
+            <div class="section-head">
+                <p class="eyebrow">What people ask for</p>
+                <h2>If it runs in a browser,<br>it&rsquo;s on the menu.</h2>
+            </div>
+            <ol class="menu">
+                <li>
+                    <span class="menu-num">01</span>
+                    <h3>Internal tools</h3>
+                    <p class="body">Dashboards, admin panels and back-office apps that replace the spreadsheet everyone is afraid to touch.</p>
+                    <span class="menu-eg">E.g. stock dashboard</span>
+                </li>
+                <li>
+                    <span class="menu-num">02</span>
+                    <h3>Customer apps</h3>
+                    <p class="body">Portals, booking flows and web apps your customers log into, built to hold up once real people start using them.</p>
+                    <span class="menu-eg">E.g. client portal</span>
+                </li>
+                <li>
+                    <span class="menu-num">03</span>
+                    <h3>Integrations</h3>
+                    <p class="body">Connect the tools you already pay for, so nobody copies numbers from one screen to another by hand.</p>
+                    <span class="menu-eg">E.g. CRM to invoicing</span>
+                </li>
+                <li>
+                    <span class="menu-num">04</span>
+                    <h3>AI features</h3>
+                    <p class="body">Assistants and document workflows that run on your own data, with a person approving anything that matters.</p>
+                    <span class="menu-eg">E.g. contract review</span>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section wrap founder" aria-labelledby="founder-title">
+            <figure class="founder-photo">
+                <img src="images/grant.jpg" width="1000" height="1250" alt="Grant Bellar smiling in an orange cap and rain jacket">
+                <figcaption>Grant Bellar · Wichita, KS</figcaption>
+            </figure>
+            <div class="founder-copy">
+                <p class="eyebrow">Who builds it</p>
+                <h2 id="founder-title">One engineer<br>you can call.</h2>
+                <p class="body">Sunnyside is Grant Bellar, a software engineer in Wichita, Kansas. Every request is built by Grant, not handed off to a contractor you&rsquo;ll never meet. An agency puts a project manager between you and the code. Here you talk to the person writing it.</p>
+                <p class="body">The code is yours from the first commit, and so are the accounts and the data. Decisions get explained in plain English, so you never end up needing us just to understand your own product.</p>
+            </div>
+        </section>
+
+        <section class="section wrap pricing" id="pricing">
+            <div class="pricing-lead">
+                <p class="eyebrow">Pricing</p>
+                <h2>One flat rate. Pause when it&rsquo;s quiet.</h2>
+                <p class="body">No hourly billing, no scoping calls, no contracts. Pause your plan and the unused days wait for you.</p>
+                <p class="horizon-note"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><rect x="0" y="11" width="16" height="1.5" fill="#111"/></svg>Paused plans sit below the horizon</p>
+            </div>
+            <div class="plans">
+                <article class="plan">
+                    <div class="plan-head">
+                        <h3 class="label ink">One at a time</h3>
+                        <svg width="20" height="12" viewBox="0 0 20 12" aria-hidden="true"><path d="M0 10a10 10 0 0 1 20 0Z" fill="#FF4F00"/><rect x="0" y="10" width="20" height="2" fill="currentColor"/></svg>
+                    </div>
+                    <p class="price"><strong>$4,500</strong><span>/month</span></p>
+                    <p class="body">One active request, as many queued as you like. Right for a business with a steady list.</p>
+                    <ul>
+                        <li>Most requests ship in a few days</li>
+                        <li>Hosting and upkeep included</li>
+                        <li>You own all the code</li>
+                        <li>Pause or cancel anytime</li>
                     </ul>
-                    <a class="button" href="#contact">Tell me what you&rsquo;re working on</a>
-                    <h1>Your idea or your business, built and kept running by one person you can call.</h1>
-                    <p class="sub">I&rsquo;m Grant Bellar, a software engineer in Wichita, Kansas.</p>
-                </div>
-            </div>
-
-            <div class="sheets" id="letter">
-                <div class="letter">
-                    <p>Hi,</p>
-                    <p>I&rsquo;m Grant. I work with founders and small business owners who have hit the wall with software.</p>
-                    <p>For some, it&rsquo;s a first version of their idea, built with an AI tool, a no-code builder or your own code. It demos well, but it breaks when real people use it. For others, it&rsquo;s the business itself: orders retyped from one system into another, or software that does most of what you need while the rest gets done by hand.</p>
-                    <p>An agency will take months and put a project manager between you and the code. A freelancer from a marketplace is quick to hire, but you can&rsquo;t tell if they&rsquo;re any good until it&rsquo;s too late.</p>
-                    <p><mark>With me, you work directly with the person doing the work.</mark> Before I suggest anything, I want to understand how your business runs and what&rsquo;s costing you time. The first project is often small, like a weekly report you no longer put together by hand, or a checkout that keeps failing. If it goes well, we take on the next thing.</p>
-                    <p>You own everything, including the code, the accounts and the data. I explain decisions in plain English, so you&rsquo;re never stuck depending on me.</p>
-                    <div class="signoff">
-                        <img src="images/grant-face.jpg" width="256" height="256" alt="">
-                        <div>
-                            <div class="signature">Grant Bellar</div>
-                            <small>Founder, Sunnyside</small>
-                        </div>
+                    <a class="btn btn-ink btn-block" href="#contact" data-plan="One at a time">Start with one</a>
+                </article>
+                <article class="plan plan-dark">
+                    <div class="plan-head">
+                        <h3 class="label">Two at a time</h3>
+                        <span class="pair" aria-hidden="true">
+                            <svg width="20" height="12" viewBox="0 0 20 12"><path d="M0 10a10 10 0 0 1 20 0Z" fill="#FF4F00"/><rect x="0" y="10" width="20" height="2" fill="currentColor"/></svg>
+                            <svg width="20" height="12" viewBox="0 0 20 12"><path d="M0 10a10 10 0 0 1 20 0Z" fill="#FF4F00"/><rect x="0" y="10" width="20" height="2" fill="currentColor"/></svg>
+                        </span>
                     </div>
+                    <p class="price"><strong>$7,500</strong><span>/month</span></p>
+                    <p class="body">Two requests in progress at once. Right when fixes can&rsquo;t wait on a big build.</p>
+                    <ul>
+                        <li>Everything in One at a time</li>
+                        <li>Two requests built in parallel</li>
+                        <li>A weekly call if you want one</li>
+                        <li>Pause or cancel anytime</li>
+                    </ul>
+                    <a class="btn btn-sun btn-block" href="#contact" data-plan="Two at a time">Start with two</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section wrap faq" id="faq">
+            <div class="faq-lead">
+                <p class="eyebrow">Questions</p>
+                <h2>Asked before signing up.</h2>
+            </div>
+            <div class="faq-list">
+                <details open>
+                    <summary>I&rsquo;m not technical. How do I write a request?</summary>
+                    <p class="body">The way you&rsquo;d explain it to a colleague. &ldquo;Customers should be able to reschedule their own bookings&rdquo; is a complete request. If we need more, we ask.</p>
+                </details>
+                <details>
+                    <summary>What counts as one request?</summary>
+                    <p class="body">One thing you could describe in a sentence or two: a new page, a report, a fix, a connection between two tools. Bigger projects get split into requests that each ship on their own, so you see progress every few days instead of waiting months.</p>
+                </details>
+                <details>
+                    <summary>What happens when I pause?</summary>
+                    <p class="body">Billing stops and the unused days of your month wait for you. When you unpause, the queue picks up where it left off. Your software keeps running the whole time.</p>
+                </details>
+                <details>
+                    <summary>Who owns the code?</summary>
+                    <p class="body">You do, from the first commit. It lives in your repository and runs in your accounts, so you can take it anywhere, with or without us.</p>
+                </details>
+                <details>
+                    <summary>Can you work on software we already have?</summary>
+                    <p class="body">Yes. Plenty of the work above started as someone else&rsquo;s code, an AI-built prototype or a pile of no-code tools. Often the first request is just getting it stable.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="night" id="contact">
+            <div class="wrap closer">
+                <div class="closer-copy">
+                    <p class="eyebrow sun">Sundown · Requests open</p>
+                    <h2 class="display">Send it tonight.<br>See it <span class="sun">by sunrise.</span></h2>
+                    <p class="lede">Your first request can be in the queue in five minutes. If the first week isn&rsquo;t what you expected, you get it back.</p>
                 </div>
+<pre class="ascii-sun" aria-hidden="true">                 ******+++++++
+            **************+++++++==
+         ***#########*******++++++====
+       **###############******+++++=====
+     **#######%%%%%#######*****+++++====--
+    **#####%%%%%%%%%%######*****++++=====--
+   **#####%%%%%%%%%%%%%####*****+++++====---
+  ***#####%%%%@@@@@%%%%#####****+++++====----
+ ****#####%%%%%@@@%%%%%#####****+++++====-----
+ ****#####%%%%%%%%%%%%#####*****++++=====-----
++*****######%%%%%%%%%#####*****+++++=====----:
+++******#################*****+++++=====-----::
++++*******#############******++++++=====----:::
++++++*********#####*********+++++======-----::
+ ++++++******************+++++++======-----:::
+
+  ===+++++++++++++++++++++++=======-----:::::
+   ======+++++++++++++++=========------:::::
+
+     -=====================--------:::::::
+       ------=======------------::::::::
+
+            ------------:::::::::::
+                 :::::::::::::</pre>
             </div>
 
-            <section class="work-band" id="work">
-                <header>
-                    <h2>Things I&rsquo;ve built</h2>
-                </header>
-                <div class="work-list" data-layout="desk">
-                    <article class="sheet" data-offer="Prototype">
-                        <figure class="shot"><svg viewBox="0 0 320 200" aria-hidden="true"><text x="18" y="32" class="lbl badtext">before</text><text x="178" y="32" class="lbl oktext">after</text><path d="M160 36v150" class="dash"/><circle cx="160" cy="112" r="11" class="paper"/><path d="M154 112h12M161 107l5 5-5 5"/><g transform="rotate(-9 56 107)"><rect x="28" y="70" width="56" height="74" class="paper"/><path d="M36 84h40M36 96h32M36 108h38M36 120h26" class="thin"/></g><g transform="rotate(8 100 93)"><rect x="72" y="56" width="56" height="74" class="paper"/><path d="M80 70h40M80 82h32M80 94h38M80 106h26" class="thin"/></g><g transform="rotate(-3 78 139)"><rect x="50" y="102" width="56" height="74" class="paper"/><path d="M58 116h40M58 128h32M58 140h38M58 152h26" class="thin"/></g><text x="20" y="60" class="t badtext">?</text><text x="126" y="52" class="t badtext">?</text><rect x="98" y="150" width="46" height="30" rx="4" class="bad dashed"/><path d="M114 158l14 14M128 158l-14 14" class="bad heavy"/><rect x="174" y="42" width="130" height="98" rx="4" class="paper"/><path d="M174 54h130"/><circle cx="286" cy="74" r="9"/><path d="M286 74v-5M286 74l4 3"/><circle cx="190" cy="72" r="4.5"/><circle cx="204" cy="72" r="4.5" class="ink"/><circle cx="218" cy="72" r="4.5"/><circle cx="232" cy="72" r="4.5"/><circle cx="190" cy="88" r="4.5"/><circle cx="204" cy="88" r="4.5"/><circle cx="218" cy="88" r="4.5"/><circle cx="232" cy="88" r="4.5" class="ink"/><circle cx="190" cy="104" r="4.5" class="ink"/><circle cx="204" cy="104" r="4.5"/><circle cx="218" cy="104" r="4.5"/><circle cx="232" cy="104" r="4.5"/><rect x="190" y="118" width="96" height="9" rx="4.5" class="hl"/><rect x="190" y="118" width="96" height="9" rx="4.5" class="thin"/><rect x="212" y="148" width="68" height="40" rx="5" class="hl"/><rect x="212" y="148" width="68" height="40" rx="5"/><path d="M212 160h68M222 178h22"/><circle cx="286" cy="150" r="11" class="okfill"/><path d="M281.1 150.2l3.5 3.5 6.6-6.8" class="tick"/></svg></figure>
-                        <span class="tag">Prototype</span>
-                        <h3>Board exam prep people pay for</h3>
-                        <p class="summary">The practice questions were written, but there was no way to sell them or give people access.</p>
-                        <p class="readout"><strong>~5,000</strong> <span>questions, sold through Stripe since Feb 2024</span></p>
-                        <dl>
-                            <div><dt>What I built</dt><dd>Timed 100-question exams that predict your score, about 5,000 review questions, and checkout through Stripe.</dd></div>
-                            <div><dt>What changed</dt><dd>People have been paying for it since February 2024. It&rsquo;s on its third version now.</dd></div>
-                        </dl>
-                    </article>
-                    <article class="sheet" data-offer="Rescue">
-                        <figure class="shot"><svg viewBox="0 0 320 200" aria-hidden="true"><text x="18" y="32" class="lbl badtext">before</text><text x="178" y="32" class="lbl oktext">after</text><path d="M160 36v150" class="dash"/><circle cx="160" cy="112" r="11" class="paper"/><path d="M154 112h12M161 107l5 5-5 5"/><path d="M30 57L102 103" class="bad thin"/><path d="M80 51L44 105" class="bad thin"/><path d="M30 57L124 65" class="bad thin"/><path d="M124 65L32 155" class="bad thin"/><path d="M44 105L92 159" class="bad thin"/><path d="M80 51L92 159" class="bad thin"/><path d="M102 103L32 155" class="bad thin"/><path d="M124 65L44 105" class="bad thin"/><path d="M30 57L80 51" class="bad thin"/><path d="M32 155L92 159" class="bad thin"/><path d="M80 51L102 103" class="bad thin"/><rect x="18" y="48" width="24" height="18" rx="3" class="paper"/><rect x="18" y="48" width="24" height="18" rx="3"/><rect x="68" y="42" width="24" height="18" rx="3" class="paper"/><rect x="68" y="42" width="24" height="18" rx="3"/><rect x="112" y="56" width="24" height="18" rx="3" class="paper"/><rect x="112" y="56" width="24" height="18" rx="3"/><rect x="32" y="96" width="24" height="18" rx="3" class="paper"/><rect x="32" y="96" width="24" height="18" rx="3"/><rect x="90" y="94" width="24" height="18" rx="3" class="badfill"/><rect x="90" y="94" width="24" height="18" rx="3"/><rect x="20" y="146" width="24" height="18" rx="3" class="paper"/><rect x="20" y="146" width="24" height="18" rx="3"/><rect x="80" y="150" width="24" height="18" rx="3" class="paper"/><rect x="80" y="150" width="24" height="18" rx="3"/><path d="M126 104l-6 10h8l-6 10" class="bad heavy"/><rect x="196" y="62" width="92" height="92" rx="6" class="hl"/><rect x="196" y="62" width="92" height="92" rx="6"/><path d="M212 88h60M212 108h60M212 128h40"/><circle cx="288" cy="64" r="11" class="okfill"/><path d="M283.1 64.2l3.5 3.5 6.6-6.8" class="tick"/></svg></figure>
-                        <span class="tag">Rescue</span>
-                        <h3>Off no-code, onto one system</h3>
-                        <p class="summary">Seven separate tools shared one database, so every fix touched all of them.</p>
-                        <p class="readout"><strong>23,664</strong> <span>records moved, plus 10,676 files, every one checked</span></p>
-                        <dl>
-                            <div><dt>What I built</dt><dd>One app to replace all seven tools, owned by the team. We moved over one piece at a time and checked every record and file.</dd></div>
-                            <div><dt>What changed</dt><dd>All 23,664 records and 10,676 files made it across, and the old tools are shut off.</dd></div>
-                        </dl>
-                    </article>
-                    <article class="sheet" data-offer="Automation">
-                        <figure class="shot"><svg viewBox="0 0 320 200" aria-hidden="true"><text x="18" y="32" class="lbl badtext">before</text><text x="178" y="32" class="lbl oktext">after</text><path d="M160 36v150" class="dash"/><circle cx="160" cy="112" r="11" class="paper"/><path d="M154 112h12M161 107l5 5-5 5"/><rect x="20" y="44" width="80" height="138" rx="5" class="paper"/><circle cx="42" cy="66" r="10"/><path d="M58 62h32M58 72h22"/><path d="M28 103h22" class="thin"/><rect x="56" y="96" width="36" height="16" rx="2" class="bad dashed"/><text x="69" y="109" class="t small badtext">?</text><path d="M28 131h22" class="thin"/><rect x="56" y="124" width="36" height="16" rx="2" class="bad dashed"/><text x="69" y="137" class="t small badtext">?</text><path d="M28 159h22" class="thin"/><rect x="56" y="152" width="36" height="16" rx="2" class="bad dashed"/><text x="69" y="165" class="t small badtext">?</text><rect x="110" y="84" width="36" height="24" rx="3" class="paper"/><rect x="110" y="84" width="36" height="24" rx="3" class="bad"/><path d="M110 86l18 12 18-12" class="bad"/><rect x="110" y="116" width="36" height="24" rx="3" class="paper"/><rect x="110" y="116" width="36" height="24" rx="3" class="bad"/><path d="M110 118l18 12 18-12" class="bad"/><rect x="110" y="148" width="36" height="24" rx="3" class="paper"/><rect x="110" y="148" width="36" height="24" rx="3" class="bad"/><path d="M110 150l18 12 18-12" class="bad"/><path d="M104 70l8-6M104 64h8v8" class="bad"/><rect x="180" y="44" width="80" height="138" rx="5" class="paper"/><circle cx="202" cy="66" r="10"/><path d="M218 62h32M218 72h22"/><path d="M188 103h22" class="thin"/><rect x="216" y="96" width="36" height="16" rx="2"/><path d="M222 104h22"/><path d="M188 131h22" class="thin"/><rect x="216" y="124" width="36" height="16" rx="2"/><path d="M222 132h18"/><path d="M188 159h22" class="thin"/><rect x="216" y="152" width="36" height="16" rx="2" class="hl"/><rect x="216" y="152" width="36" height="16" rx="2"/><path d="M222 160h24"/><circle cx="258" cy="48" r="11" class="okfill"/><path d="M253.1 48.2l3.5 3.5 6.6-6.8" class="tick"/><rect x="270" y="104" width="34" height="24" rx="3" class="paper"/><path d="M270 106l17 12 17-12"/><path d="M268 96a20 20 0 0 1 34-4" class="okline"/><path d="M296 86l6 6-8 2" class="okline"/><path d="M268 138a20 20 0 0 0 34 4" class="okline"/><path d="M274 148l-6-6 8-2" class="okline"/></svg></figure>
-                        <span class="tag">Automation</span>
-                        <h3>Following up with applicants automatically</h3>
-                        <p class="summary">Most applications were just an email and a resume, and recruiters chased every missing answer by hand.</p>
-                        <p class="readout"><strong>48h</strong> <span>to undo any automatic decline</span></p>
-                        <dl>
-                            <div><dt>What I built</dt><dd>Emails that ask applicants for whatever their application is missing. AI reads the replies. When someone clearly doesn&rsquo;t fit, the system declines them, and a recruiter has 48 hours to undo it.</dd></div>
-                            <div><dt>What changed</dt><dd>Recruiters spend their time on applicants who have already answered everything.</dd></div>
-                        </dl>
-                    </article>
-                    <article class="sheet" data-offer="Automation">
-                        <figure class="shot"><svg viewBox="0 0 320 200" aria-hidden="true"><text x="18" y="32" class="lbl badtext">before</text><text x="178" y="32" class="lbl oktext">after</text><path d="M160 36v150" class="dash"/><circle cx="160" cy="112" r="11" class="paper"/><path d="M154 112h12M161 107l5 5-5 5"/><rect x="14" y="92" width="28" height="50" rx="3" class="paper"/><rect x="14" y="92" width="28" height="50" rx="3"/><circle cx="28.0" cy="106" r="6"/><path d="M20 122c3-7 13-7 16 0M20 130h16" class="thin"/><rect x="30" y="132" width="7" height="10" rx="1.5" class="badfill"/><rect x="46" y="92" width="28" height="50" rx="3" class="paper"/><rect x="46" y="92" width="28" height="50" rx="3"/><circle cx="60.0" cy="106" r="6"/><path d="M52 122c3-7 13-7 16 0M52 130h16" class="thin"/><rect x="62" y="132" width="7" height="10" rx="1.5" class="badfill"/><rect x="78" y="92" width="28" height="50" rx="3" class="paper"/><rect x="78" y="92" width="28" height="50" rx="3"/><circle cx="92.0" cy="106" r="6"/><path d="M84 122c3-7 13-7 16 0M84 130h16" class="thin"/><rect x="110" y="92" width="28" height="50" rx="3" class="paper"/><rect x="110" y="92" width="28" height="50" rx="3"/><circle cx="124.0" cy="106" r="6"/><path d="M116 122c3-7 13-7 16 0M116 130h16" class="thin"/><rect x="126" y="132" width="7" height="10" rx="1.5" class="badfill"/><path d="M37 150c8 16 30 16 32 0M69 150c12 18 52 18 64 0" class="bad dashed"/><text x="52" y="80" class="t badtext big">?</text><text x="112" y="70" class="t badtext">?</text><rect x="180" y="104" width="28" height="50" rx="3" class="paper"/><rect x="180" y="104" width="28" height="50" rx="3"/><circle cx="194.0" cy="118" r="6"/><path d="M186 134c3-7 13-7 16 0M186 142h16" class="thin"/><circle cx="194" cy="92" r="8" class="okfill"/><path d="M190.4 92.2l2.6 2.6 4.8-5.0" class="tick"/><rect x="214" y="104" width="28" height="50" rx="3" class="paper"/><rect x="214" y="104" width="28" height="50" rx="3"/><circle cx="228.0" cy="118" r="6"/><path d="M220 134c3-7 13-7 16 0M220 142h16" class="thin"/><circle cx="228" cy="92" r="8" class="okfill"/><path d="M224.4 92.2l2.6 2.6 4.8-5.0" class="tick"/><rect x="262" y="116" width="28" height="50" rx="3" class="paper"/><rect x="262" y="116" width="28" height="50" rx="3"/><circle cx="276.0" cy="130" r="6"/><path d="M268 146c3-7 13-7 16 0M268 154h16" class="thin"/><rect x="268" y="110" width="28" height="50" rx="3" class="paper"/><rect x="268" y="110" width="28" height="50" rx="3"/><circle cx="282.0" cy="124" r="6"/><path d="M274 140c3-7 13-7 16 0M274 148h16" class="thin"/><rect x="274" y="104" width="28" height="50" rx="3" class="paper"/><rect x="274" y="104" width="28" height="50" rx="3"/><circle cx="288.0" cy="118" r="6"/><path d="M280 134c3-7 13-7 16 0M280 142h16" class="thin"/><path d="M288 102V60"/><path d="M288 60h22l-7 9 7 9h-22z" class="hl"/><path d="M288 60h22l-7 9 7 9h-22"/></svg></figure>
-                        <span class="tag">Automation</span>
-                        <h3>Catching fake applicants</h3>
-                        <p class="summary">Rings of fake applicants reused phones, emails and resumes, and recruiters lost hours to them.</p>
-                        <p class="readout"><strong>101</strong> <span>of 7,571 applicants flagged high risk, no real hires among them</span></p>
-                        <dl>
-                            <div><dt>What I built</dt><dd>A risk score built from signals a person can check, like a phone number, email or resume that shows up on other applications. It flags likely fakes before anyone gets on a call with them.</dd></div>
-                            <div><dt>What changed</dt><dd>It flagged 101 of 7,571 applicants as high risk. None of the people who were actually hired were flagged.</dd></div>
-                        </dl>
-                    </article>
-                    <article class="sheet" data-offer="Custom tools">
-                        <figure class="shot"><svg viewBox="0 0 320 200" aria-hidden="true"><text x="18" y="32" class="lbl badtext">before</text><text x="178" y="32" class="lbl oktext">after</text><path d="M160 36v150" class="dash"/><circle cx="160" cy="112" r="11" class="paper"/><path d="M154 112h12M161 107l5 5-5 5"/><rect x="16" y="44" width="126" height="124" class="paper"/><path d="M16 68h126" class="thin"/><path d="M16 92h126" class="thin"/><path d="M16 116h126" class="thin"/><path d="M16 140h126" class="thin"/><path d="M16 164h126" class="thin"/><path d="M48 44v124" class="thin"/><path d="M80 44v124" class="thin"/><path d="M112 44v124" class="thin"/><rect x="80" y="68" width="32" height="24" class="badfill soft"/><rect x="48" y="116" width="32" height="24" class="badfill soft"/><g transform="rotate(-9 44 100)"><rect x="24" y="84" width="40" height="32" class="paper"/><rect x="24" y="84" width="40" height="32"/><path d="M30 96c6-4 10 4 16 0s10 4 12 0M30 106h18" class="bad"/></g><g transform="rotate(10 120 142)"><rect x="100" y="126" width="40" height="32" class="paper"/><rect x="100" y="126" width="40" height="32"/><path d="M106 138c6-4 10 4 16 0s10 4 12 0M106 148h18" class="bad"/></g><text x="124" y="64" class="t badtext">?</text><rect x="196" y="40" width="96" height="148" rx="3" class="paper"/><path d="M210 58h40" class="bold"/><path d="M210 84h68M210 104h68M210 124h44" class="thin"/><path d="M260 98v-5a7 7 0 0 1 14 0v5"/><rect x="256" y="98" width="22" height="16" rx="3" class="hl"/><rect x="256" y="98" width="22" height="16" rx="3"/><path d="M210 156h68"/><path d="M244 172h34" class="bold"/><path d="M262 128a10 10 0 1 1 10 12" class="okline"/><path d="M268 136l4 4-5 3" class="okline"/><circle cx="292" cy="44" r="11" class="okfill"/><path d="M287.1 44.2l3.5 3.5 6.6-6.8" class="tick"/></svg></figure>
-                        <span class="tag">Custom tools</span>
-                        <h3>Invoices built from live data</h3>
-                        <p class="summary">Every month, someone built the invoices and vendor payments by hand in a spreadsheet.</p>
-                        <p class="readout"><strong>0</strong> <span>records deleted in the switch, tested on production data first</span></p>
-                        <dl>
-                            <div><dt>What I built</dt><dd>A billing system that calculates invoices from live data and locks in the exchange rate. When hours change, the invoice updates to match.</dd></div>
-                            <div><dt>What changed</dt><dd>I tested it against real production data before the switch. Nothing was deleted.</dd></div>
-                        </dl>
-                    </article>
-                    <article class="sheet" data-offer="Data">
-                        <figure class="shot"><svg viewBox="0 0 320 200" aria-hidden="true"><text x="18" y="32" class="lbl badtext">before</text><text x="178" y="32" class="lbl oktext">after</text><path d="M160 36v150" class="dash"/><circle cx="160" cy="112" r="11" class="paper"/><path d="M154 112h12M161 107l5 5-5 5"/><path d="M22 44h56l18 18v92H22z" class="paper"/><path d="M22 44h56l18 18v92H22z"/><path d="M78 44v18h18"/><path d="M30 76c5-5 9 4 14 0s9 4 14 0 9 4 14 0 9 4 12 0" class="thin" style="stroke-dasharray:56 200"/><path d="M30 90c5-5 9 4 14 0s9 4 14 0 9 4 14 0 9 4 12 0" class="thin" style="stroke-dasharray:40 200"/><path d="M30 104c5-5 9 4 14 0s9 4 14 0 9 4 14 0 9 4 12 0" class="thin" style="stroke-dasharray:60 200"/><path d="M30 118c5-5 9 4 14 0s9 4 14 0 9 4 14 0 9 4 12 0" class="thin" style="stroke-dasharray:34 200"/><path d="M30 132c5-5 9 4 14 0s9 4 14 0 9 4 14 0 9 4 12 0" class="thin" style="stroke-dasharray:50 200"/><g transform="rotate(18 112 160)"><rect x="100" y="150" width="24" height="14" rx="2" class="bad"/></g><g transform="rotate(-24 128 128)"><rect x="118" y="120" width="22" height="13" rx="2" class="bad"/></g><g transform="rotate(32 70 176)"><rect x="60" y="168" width="22" height="13" rx="2" class="bad"/></g><text x="112" y="64" class="t badtext big">?</text><rect x="198" y="134" width="84" height="34" rx="4" class="paper"/><rect x="198" y="134" width="84" height="34" rx="4"/><rect x="192" y="124" width="84" height="34" rx="4" class="paper"/><rect x="192" y="124" width="84" height="34" rx="4"/><rect x="186" y="114" width="84" height="34" rx="4" class="paper"/><rect x="186" y="114" width="84" height="34" rx="4"/><path d="M196 128h44M196 138h28" class="thin"/><rect x="178" y="56" width="118" height="36" rx="4" class="hl"/><rect x="178" y="56" width="118" height="36" rx="4"/><text x="190" y="80" class="t">1,448</text><text x="238" y="80" class="t small">of 1,448</text><circle cx="296" cy="58" r="11" class="okfill"/><path d="M291.1 58.2l3.5 3.5 6.6-6.8" class="tick"/></svg></figure>
-                        <span class="tag">Data</span>
-                        <h3>From Word documents to a question bank</h3>
-                        <p class="summary">Questions, answers, explanations and sources lived in Word files with homemade formatting.</p>
-                        <p class="readout"><strong>2,013</strong> <span>questions loaded, with the count matched at every step</span></p>
-                        <dl>
-                            <div><dt>What I built</dt><dd>Parsers that read the homemade formatting and turn it into quizzes. They check the question count after every step.</dd></div>
-                            <div><dt>What changed</dt><dd>The first batches loaded 1,448 review questions and 565 exam questions, and every count matched.</dd></div>
-                        </dl>
-                    </article>
+            <div class="wrap contact">
+                <div class="contact-lead">
+                    <p class="eyebrow">Start here</p>
+                    <h2>Tell us what you&rsquo;re working on.</h2>
+                    <p class="body">A link, a screen recording or a few sentences is enough. Grant replies within a day.</p>
                 </div>
-            </section>
-
-            <section class="reply contact" id="contact">
-                <h2>Tell me what you&rsquo;re working on</h2>
-                <p>A link, a screen recording, or a few sentences is enough. I reply within a day.</p>
                 <form action="https://formspree.io/f/xrbapzlz" method="POST">
-                    <input type="hidden" name="_subject" value="New inquiry from sunnyside website">
+                    <input type="hidden" name="_subject" value="New request from the Sunnyside website">
                     <label>Your email <input type="email" name="email" autocomplete="email" required></label>
-                    <label>Link to what you&rsquo;ve built <input type="url" name="link" placeholder="Optional"></label>
-                    <div class="pair">
-                        <label>What do you need? <select name="need"><option>Turning a prototype into a product</option><option>Finishing a stalled project</option><option>Automating manual work</option><option>A custom tool or dashboard</option><option>Not sure yet</option></select></label>
-                        <label>Budget <select name="budget"><option>Under $10k</option><option>$10k to $25k</option><option>$25k to $50k</option><option>$50k+</option><option>Not sure yet</option></select></label>
+                    <label>Link to what you have now <input type="url" name="link" placeholder="Optional"></label>
+                    <div class="pair-fields">
+                        <label>What do you need?
+                            <select name="need">
+                                <option>An internal tool</option>
+                                <option>A customer app</option>
+                                <option>An integration</option>
+                                <option>An AI feature</option>
+                                <option>Help with software we already have</option>
+                                <option>Not sure yet</option>
+                            </select>
+                        </label>
+                        <label>Plan
+                            <select name="plan">
+                                <option>Not sure yet</option>
+                                <option>One at a time</option>
+                                <option>Two at a time</option>
+                            </select>
+                        </label>
                     </div>
-                    <label>What&rsquo;s going wrong, and what do you need it to do? <textarea name="message" required></textarea></label>
-                    <button class="button" type="submit">Send message</button>
+                    <label>Your first request <textarea name="message" rows="5" placeholder="Customers should be able to reschedule their own bookings." required></textarea></label>
+                    <button class="btn btn-sun" type="submit">Send the first request</button>
                     <p class="form-status" role="status"></p>
                 </form>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <footer>&copy; 2026 Sunnyside Solutions. Made in Wichita, Kansas.</footer>
+    <footer class="foot">
+        <div class="wrap foot-row">
+            <a class="mark" href="#top" aria-label="Sunnyside home">
+                <svg width="26" height="15" viewBox="0 0 26 15" aria-hidden="true"><path d="M0 13a13 13 0 0 1 26 0Z" fill="#FF4F00"/><rect x="0" y="13" width="26" height="2" fill="currentColor"/></svg>
+                <span>sunnyside</span>
+            </a>
+            <nav class="foot-nav" aria-label="Footer">
+                <a href="#work">Work</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="privacy.html">Privacy</a>
+            </nav>
+            <p class="legal">&copy; 2026 Sunnyside Solutions LLC · Wichita, Kansas</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
